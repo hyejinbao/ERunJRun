@@ -29,7 +29,7 @@
 	      
 	      <div id="crewBtn">
 		      <input type="button" value="크루 모집">
-		      <input type="button" value="오운완">
+		      <input type="button" value="오운완실패">
 	      </div>
 	      
 	      <!-- 카드 섹션 -->
