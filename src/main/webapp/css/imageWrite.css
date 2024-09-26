@@ -1,0 +1,29 @@
+.image-upload-container {
+    position: relative;
+   display: inline-block;
+   width: 300px; /* 원하는 너비 */
+   height: 350px; /* 원하는 높이 */
+   text-align: center; /* 텍스트 및 아이콘 중앙 정렬 */
+   border: 1px solid #ccc; /* 경계선 추가 (선택 사항) */
+   overflow: hidden; /* 자식 요소가 범위를 벗어나지 않도록 */
+}
+
+.camera {
+    position: absolute;
+    top: 50%; /* 조정할 수 있는 값 */
+    left: 50%; /* 조정할 수 있는 값 */
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10; /* 이미지 위에 아이콘이 보이도록 설정 */
+}
+
+#showing {
+    width: 100%; /* 부모 요소의 너비에 맞춤 */
+    height: 100%; /* 부모 요소의 높이에 맞춤 */
+    object-fit: cover; /* 이미지 비율 유지하며 크기 조정 */
+}
+.imageWriteMb-3{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}

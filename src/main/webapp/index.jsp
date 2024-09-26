@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/index.css">
 <link rel="stylesheet" href="./css/member.css">
+<link rel="stylesheet" href="./css/imageWrite.css">
 
 </head>
 <body>
@@ -30,7 +31,7 @@
 	      </div>
 	      
 	      <div id="crewBtn">
-		      <input type="button" value="크루 모집">
+			  <input type="button" value="크루 모집">
 		      <input type="button" value="오운완실패">
 	      </div>
 	      
@@ -234,6 +235,55 @@
 				        </div>
 				    </div>
 				</div>
+		<!--이미지등록모달-->
+		<div class="modal fade" id="imageWriteModal" tabindex="-1" aria-labelledby="imageWriteModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="imageWriteModalLabel">이미지 업로드</h5>
+		                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		            </div>
+		            <div class="modal-body">
+		                <form action="../jsp/uploadImage.jsp" method="post" enctype="multipart/form-data" class="form">
+		                        <label for="image1" class="form-label">업로드할 이미지 선택</label>
+		                    <div class="imageWriteMb-3">
+								<div class="image-upload-container">
+									<img id="showing"/>
+										<div class="camera">
+											<svg width="50px" height="50px" viewBox="0 0 32 32" id="svg5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+												<defs id="defs2"/>
+													<g id="layer1" transform="translate(-108,-196)">
+														<path d="m 121.89453,202.00586 c -0.92482,0 -1.77586,0.52633 -2.18945,1.35351 l -0.32227,0.64649 H 117 c -1.64501,0 -3,1.35499 -3,3 v 10 c 0,1.64501 1.35499,3 3,3 h 14 c 1.64501,0 3,-1.35499 3,-3 v -10 c 0,-1.64501 -1.35499,-3 -3,-3 h -2.38281 l -0.32227,-0.64649 c -0.41359,-0.82718 -1.26463,-1.35351 -2.18945,-1.35351 z m 0,2 h 4.21094 c 0.1715,0 0.32369,0.0947 0.40039,0.24805 l 0.59961,1.19921 A 1.0001,1.0001 0 0 0 128,206.00586 h 3 c 0.56413,0 1,0.43587 1,1 v 10 c 0,0.56413 -0.43587,1 -1,1 h -14 c -0.56413,0 -1,-0.43587 -1,-1 v -10 c 0,-0.56413 0.43587,-1 1,-1 h 3 a 1.0001,1.0001 0 0 0 0.89453,-0.55274 l 0.59961,-1.19921 c 0.0767,-0.1534 0.22889,-0.24805 0.40039,-0.24805 z" id="rect30394" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+														<path d="m 111,198.00586 a 1.0001,1.0001 0 0 0 -1,1 v 4 a 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 v -3 h 3 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z" id="path30386" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+														<path d="m 111,220.00586 a 1,1 0 0 0 -1,1 v 4 a 1.0001,1.0001 0 0 0 1,1 h 4 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 h -3 v -3 a 1,1 0 0 0 -1,-1 z" id="path30388" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+														<path d="m 133,198.00586 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 3 v 3 a 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 v -4 a 1.0001,1.0001 0 0 0 -1,-1 z" id="path30390" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+														<path d="m 137,220.00586 a 1,1 0 0 0 -1,1 v 3 h -3 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 4 a 1.0001,1.0001 0 0 0 1,-1 v -4 a 1,1 0 0 0 -1,-1 z" id="path30392" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+														<path d="m 124,208.00586 c -2.19729,0 -4,1.80271 -4,4 0,2.19729 1.80271,4 4,4 2.19729,0 4,-1.80271 4,-4 0,-2.19729 -1.80271,-4 -4,-4 z m 0,2 c 1.11641,0 2,0.88359 2,2 0,1.11641 -0.88359,2 -2,2 -1.11641,0 -2,-0.88359 -2,-2 0,-1.11641 0.88359,-2 2,-2 z" id="path30410" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+														<path d="m 129,207.00631 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z" id="path30412" style="color:#000000;fill:none;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"/>
+													</g>
+											</svg>
+										</div>
+									<input type="file" class="form-control" id="image1" name="image1" style="visibility: hidden" required>
+								</div>
+		                    </div>
+		                    <div class="mb-3">
+		                        <label for="imageDescription" class="form-label">이미지 설명</label>
+		                        <textarea class="form-control" id="imageDescription" name="imageDescription" rows="3" placeholder="이미지에 대한 설명을 입력해주세요." required></textarea>
+		                    </div>
+		                    <button type="button" class="btn btn-primary">업로드</button>
+		                </form>
+		                <div class="mt-3 text-center">
+		                    <p>
+		                        <span>업로드 후 다른 작업을 원하신다면?</span>
+		                        <a href="#" data-bs-toggle="modal" data-bs-target="#anotherModal">
+		                            <b class="pointer" style="cursor: pointer; color: black;">다른 작업하기</b>
+		                        </a>
+		                    </p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
 	  <div class="footer text-left">
 	  	<jsp:include page="./main/footer.jsp" />
 	  </div>
