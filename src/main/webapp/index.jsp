@@ -79,7 +79,7 @@
 		                <form id="signupForm">
 		                    <div class="mb-3">
 		                        <label for="userid" class="form-label">아이디</label>
-		                        <input type="text" class="form-control" id="userid" placeholder="아이디를 입력해주세" required>
+		                        <input type="text" class="form-control" id="userid" placeholder="아이디를 입력해주세요" required>
 		                    </div>
 		                    <div class="mb-3">
 		                        <label for="password" class="form-label">비밀번호</label>
@@ -122,17 +122,56 @@
 										<input type="radio" class="genderform" id="gender2" name="gender" value="2" />여자
 									</div>
 							</div>
+							<div class="agree-check">
+								<input type="checkbox" name="agreement" required /> 이용약관 개인정보 수집 및 이용, 마케팅 활용
+								선택에 모두 동의합니다.
+							</div>
+							<div class="agreebtn"></div>
 		                    <button type="submit" class="btn btn-primary">가입하기</button>
 		                </form>
 		            </div>
 		        </div>
 		    </div>
 		</div>
+		<!--로그인 모달-->
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="loginModalLabel">로그인</h5>
+		                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		            </div>
+		            <div class="modal-body">
+		                <form action="../jsp/login.jsp" method="post" class="form">
+		                    <div class="mb-3 input-group">
+		                        <i class="fas fa-envelope"></i>
+		                        <input type="text" class="form-control" name="id" placeholder="ID" required>
+		                    </div>
+		                    <div class="mb-3 input-group">
+		                        <i class="fas fa-lock"></i>
+		                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+		                    </div>
+		                    <button type="submit" class="btn btn-primary">로그인</button>
+		                </form>
+		                <div class="mt-3 text-center">
+		                    <p>
+		                        <span>New here?</span>
+								<a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">
+									<b class="pointer" style="cursor: pointer; color: black;">Sign up here</b>
+								</a>
+		                    </p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
 	  
 	  <div class="footer text-left">
 	  	<jsp:include page="./main/footer.jsp" />
 	  </div>
   </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>

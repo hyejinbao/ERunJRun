@@ -66,4 +66,8 @@
 .genderform {
     display: inline-block; /* 한 줄에 나오도록 설정 */
     width: 6%;
+    accent-color: black; /* 체크 색상을 검정으로 변경 */
+}
+.agree-check input[type="checkbox"] {
+    accent-color: black; /* 체크 색상을 검정으로 변경 */
 }
