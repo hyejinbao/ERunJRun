@@ -133,7 +133,7 @@
 		        </div>
 		    </div>
 		</div>
-		<!--로그인 모달-->
+	  <!--로그인 모달-->
 		<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
 		    <div class="modal-dialog">
 		        <div class="modal-content">
@@ -165,8 +165,75 @@
 		        </div>
 		    </div>
 		</div>
-
-	  
+	  <!--마이페이지 모달-->
+		<div class="modal fade" id="myPageModal" tabindex="-1" aria-labelledby="myPageModalLabel" aria-hidden="true">
+				    <div class="modal-dialog">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <h5 class="modal-title" id="myPageModalLabel">마이페이지</h5>
+				                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				            </div>
+				            <div class="modal-body">
+				                <form id="myPageForm">
+				                    <div class="mb-3">
+				                        <label for="myPageUserid" class="form-label">아이디</label>
+				                        <input type="text" class="form-control" id="myPageUserid" placeholder="userId들어갈 곳" >
+				                    </div>
+				                    <div class="mb-3">
+				                        <label for="myPagePassword" class="form-label">비밀번호</label>
+				                        <input type="password" class="form-control" id="myPagePassword" placeholder="수정할 비밀번호" required>
+				                    </div>
+				                    <div class="mb-3">
+				                        <label for="myPageRepassword" class="form-label">비밀번호확인</label>
+				                        <input type="password" class="form-control" id="myPageRepassword" placeholder="수정할 비밀번호 확인" required>
+				                    </div>
+									<div class="mb-3">
+										<label for="myPageUsername" class="form-label">이름</label>
+										<input type="text" class="form-control" id="myPageUsername" placeholder="수정할 이름" required>
+									</div>
+									<div class="mb-3">
+										<td >
+											<label for="myPageEmail1" class="form-label">이메일</label>
+												<div class="input-group mb-3">
+											  	<input type="text" class="emailform1" id="myPageEmail1" name="myPageEmail1" required>
+											  	@
+											  	<input type="text" class="emailform2" oninput="emailChange()" onfocus="showDatalist()"
+													 list="myPageEmail2_list" id="myPageEmail2" name="myPageEmail2">
+												<input type="button" value="이메일 인증" id="myPageEmailBtn" class="emailform3">
+												<datalist id="myPageEmail2_list">
+													<option value="직접입력">직접입력</option>
+													<option value="naver.com"/>
+													<option value="gmail.com"/>
+													<option value="daum.net"/>
+												</datalist>
+												</div>
+										</td>
+									</div>
+									<div class="mb-3">
+										<label for="birth" class="form-label">생년월일</label>
+										<input type="text" class="form-control" id="myPageBirth" placeholder="birth들어갈곳" required>
+									</div>
+									<div class="mb-3">
+									    <label class="form-label">성별</label>
+											<div>
+												<input type="radio" class="genderform" id="myPageGender1" name="myPageGender" value="1" checked/>남자
+												<input type="radio" class="genderform" id="myPageGender2" name="myPageGender" value="2" />여자
+											</div>
+									</div>
+									<div class="agree-check">
+										<input type="checkbox" name="agreement" checked required /> 이용약관 개인정보 수집 및 이용, 마케팅 활용
+										선택에 모두 동의합니다.
+									</div>
+									<div class="agreebtn"></div>
+									<div class="myPageBtn">
+										<button type="button" class="updateBtn btn-primary">수정하기</button>
+										<button type="button" class="deleteBtn btn-primary">회원탈퇴</button>
+									</div>
+				                </form>
+				            </div>
+				        </div>
+				    </div>
+				</div>
 	  <div class="footer text-left">
 	  	<jsp:include page="./main/footer.jsp" />
 	  </div>
