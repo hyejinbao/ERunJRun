@@ -8,3 +8,10 @@
 /bin/
 target/
 /build/
+
+# intellyJ 파일
+*.idea/
+mvnw
+mvnw.cmd
+pom.xml
+/classes/
