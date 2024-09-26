@@ -29,7 +29,7 @@ hr {
 
 /* 햄버거 버튼 css */
 .header{
-	height:70px;
+	height:90px;
 	border-bottom:1px solid rgb(222, 226, 230);
 }
 
@@ -65,6 +65,23 @@ header .bi-person-fill:hover, header .bi-heart-fill:hover{
 
 .ham-con .bi-caret-up-fill, .ham-con .bi-caret-down-fill{
 	color:#444;
+}
+
+.navbar_name {
+  	cursor: pointer;
+    margin: 10px 20px 0 auto;
+}
+.navbar_home {
+  	cursor: pointer;
+    margin-right: 20px;
+}
+.navbar_key {
+  	cursor: pointer;
+    margin-right: 20px;
+}
+.navbar_user {
+  	cursor: pointer;
+    margin-right: 70px; /* 햄버거 버튼과의 여백 */
 }
 
 /* 햄버거 버튼  스타일*/

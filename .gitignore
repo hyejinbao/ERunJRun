@@ -36,3 +36,15 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# 빌드 디렉토리
+/bin/
+target/
+/build/
+
+# intellyJ 파일
+*.idea/
+mvnw
+mvnw.cmd
+pom.xml
+/classes/
