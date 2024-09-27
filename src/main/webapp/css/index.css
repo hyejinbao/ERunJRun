@@ -27,13 +27,6 @@ hr {
    border-top: 2px solid #ddd;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 400px;
-    object-fit: contain; /* 이미지 전체를 보여줌 (잘림 방지) */
-    background-color: #f0f0f0; /* 빈 공간에 배경색을 넣을 수 있음 */
-}
-
 /* 햄버거 버튼 css */
 .header{
 	height:90px;
@@ -78,6 +71,10 @@ header .bi-person-fill:hover, header .bi-heart-fill:hover{
   	cursor: pointer;
     margin: 10px 20px 0 auto;
 }
+.non-active{
+  	cursor: pointer;
+    margin: 0px 20px 0 auto;
+}
 .navbar_home {
   	cursor: pointer;
     margin-right: 20px;
@@ -88,7 +85,7 @@ header .bi-person-fill:hover, header .bi-heart-fill:hover{
 }
 .navbar_user {
   	cursor: pointer;
-    margin-right: 70px; /* 햄버거 버튼과의 여백 */
+    margin-right: 20px; /* 햄버거 버튼과의 여백 */
 }
 
 /* 햄버거 버튼  스타일*/
@@ -106,7 +103,7 @@ header .bi-person-fill:hover, header .bi-heart-fill:hover{
 }
 
 .navbar_burger {
-  position: fixed;
+  /*position: fixed;*/
   right: 3rem;
   cursor: pointer;
   color: #fff;

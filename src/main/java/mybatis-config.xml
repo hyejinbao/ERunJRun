@@ -3,6 +3,7 @@
 <configuration>
 	<properties resource="db.properties"/>
 	<typeAliases>
+		<typeAlias type="member.bean.MemberDTO" alias="member"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -16,5 +17,6 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="mapper/memberMapper.xml"/>
 	</mappers>
 </configuration>
