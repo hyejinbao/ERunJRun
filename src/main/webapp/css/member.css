@@ -66,4 +66,17 @@
 .genderform {
     display: inline-block; /* 한 줄에 나오도록 설정 */
     width: 6%;
+    accent-color: black; /* 체크 색상을 검정으로 변경 */
+}
+.agree-check input[type="checkbox"] {
+    accent-color: black; /* 체크 색상을 검정으로 변경 */
+}
+.myPageBtn {
+    display: flex; /* 플렉스 박스를 사용하여 버튼을 한 줄에 배치 */
+    gap: 10px;
+}
+.updateBtn, .deleteBtn {
+    flex: 1; /* 버튼을 같은 비율로 넓이 조정 */
+    padding: 10px; /* 버튼 내부 여백 */
+
 }
