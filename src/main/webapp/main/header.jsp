@@ -35,9 +35,10 @@
 	    </div>
 		<div class="navbar_menu">
 		  <a href="#">홈으로</a>
-		  <a href="#">공지</a>
+		  <a href="#">공지사항</a>
 		  <a href="#">게시판</a>
 		  <a href="#">오운완</a>
+		  <a href="#">크루 모집</a>
 		  <div class="navbar_burger_back">
 		    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
 		      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -45,4 +46,66 @@
 		  </div>
 		</div>
 	 	<!-- //햄버거 버튼 및 오른쪽 메뉴 -->
+	 	
+	 	<!-- 회원가입 모달 -->
+		<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="signupModalLabel">회원가입</h5>
+		                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		            </div>
+		            <div class="modal-body">
+		                <form id="signupForm">
+		                    <div class="mb-3">
+		                        <label for="userid" class="form-label">아이디</label>
+		                        <input type="text" class="form-control" id="userid" placeholder="아이디를 입력해주세" required>
+		                    </div>
+		                    <div class="mb-3">
+		                        <label for="password" class="form-label">비밀번호</label>
+		                        <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력해주세요" required>
+		                    </div>
+		                    <div class="mb-3">
+		                        <label for="repassword" class="form-label">비밀번호확인</label>
+		                        <input type="password" class="form-control" id="repassword" placeholder="비밀번호를 재입력해주세요" required>
+		                    </div>
+							<div class="mb-3">
+								<label for="username" class="form-label">이름</label>
+								<input type="text" class="form-control" id="username" placeholder="본명을 입력해주세요" required>
+							</div>
+							<div class="mb-3">
+								<td >
+									<label for="email1" class="form-label">이메일</label>
+										<div class="input-group mb-3">
+									  	<input type="text" class="emailform1" id="email1" name="email1" required>
+									  	@
+									  	<input type="text" class="emailform2" oninput="emailChange()" onfocus="showDatalist()"
+											 list="email2_list" id="email2" name="emai2">
+										<input type="button" value="이메일 인증" id="emailBtn" class="emailform3">
+										<datalist id="email2_list">
+											<option value="직접입력">직접입력</option>
+											<option value="naver.com"/>
+											<option value="gmail.com"/>
+											<option value="daum.net"/>
+										</datalist>
+										</div>
+								</td>
+							</div>
+							<div class="mb-3">
+								<label for="birth" class="form-label">생년월일</label>
+								<input type="text" class="form-control" id="birth" placeholder="yyyyMMdd" required>
+							</div>
+							<div class="mb-3">
+							    <label class="form-label">성별</label>
+									<div>
+										<input type="radio" class="genderform" id="gender1" name="gender" value="1" checked/>남자
+										<input type="radio" class="genderform" id="gender2" name="gender" value="2" />여자
+									</div>
+							</div>
+		                    <button type="submit" class="btn btn-primary">가입하기</button>
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
 	 	
