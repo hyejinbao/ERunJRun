@@ -47,4 +47,12 @@ public class MemberDAO {
 		sqlSession.close();
 		return memberDTO;
 	}
+
+    public boolean isExistId(String id) {
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            Integer count = sqlSession.selectOne("memberSQL.isExistId", id);
+            return count != null && count > 0; // count가 0보다 크면 true 반환
+        }
+    }
+
 }

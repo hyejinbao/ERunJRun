@@ -114,10 +114,13 @@ public class ControlServlet extends HttpServlet {
 		String view ="";
 		
 		try {
-			view = com.requestPro(request, response);	//WriteFormService에 있는 return값(/member/memberWriteForm.jsp)을 꺼내옴
-			System.out.println("view = " + view);
+		    view = com.requestPro(request, response);
+		    if (view == null) {
+		        view = "none"; // 기본값 설정
+		    }
+		    System.out.println("view = " + view);
 		} catch (Throwable e) {
-			e.printStackTrace();
+		    e.printStackTrace();
 		}
 		if(view.equals("none")) return;
 		
