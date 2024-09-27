@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ERun JRun</title>
+	<!-- 외부 폰트와 스타일시트, 그리고 부트스트랩을 통해 CSS 프레임워크를 불러옵니다. -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<!-- 공통스타일-->
+	<style>
+		body {
+			font-family: 'Noto Sans KR', sans-serif;
+			background-color: #f9f9f9;
+		}
+
+		#wrap {
+			width: 80%;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+	}
+
+		h1 {
+			font-size: 24px;
+			color: #050099;
+			margin-bottom: 20px;
+			text-align: left;
+			/* 왼쪽 정렬 */
+		}
+		/*혜진추가*/
+		.btn-custom {
+			background-color: #333;
+			color: white;
+			border: none;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			text-decoration: none;
+			text-align: center;
+			display: inline-block;
+			cursor: pointer;
+			margin-bottom: 20px;
+			transition: transform 0.3s, box-shadow 0.3s;
+			margin-bottom: 50px;
+			/* 버튼의 하단 여백 */
+		}
+
+		.btn-custom:hover {
+			background-color: #555;
+			/* 호버 시 색상 변경 */
+			transform: scale(1.1);
+			/* 호버 시 버튼이 10% 커지도록 설정 */
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+			/* 호버 시 그림자 효과 추가로 튀어나와 보이게 함 */
+		}
+
+		/* hr 태그에 마진 추가 */
+		hr {
+			margin-top: 50px;
+			margin-bottom: 100px;
+			border: none;
+			border-top: 2px solid #ddd;
+		}
+
+		/*오혜진추가
+		#wrap {
+			width: 90%;
+			max-width: 1200px;
+			margin: 0 auto;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			border-radius: 8px;
+			margin-top: 20px;
+		}*/
+
+		#header h1 {
+			display: flex;
+			align-items: center;
+			font-size: 1.8rem;
+			margin-bottom: 10px;
+				}
+
+		#header img {
+			margin-right: 10px;
+		}
+
+		hr {
+			border-color: #483D8B;
+			border-width: 2px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+			font-size: 1rem;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid #ddd;
+		}
+		
+		th,
+		td {
+			padding: 10px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+
+		td[colspan="3"] {
+			font-size: 1.3rem;
+			font-weight: bold;
+		}
+
+		td[valign="top"] {
+			text-align: left;
+			padding: 20px;
+			line-height: 1.6;
+			white-space: pre-line;
+		}
+
+		/* 버튼 스타일 */
+	input[type="button"] {
+    background-color: #5D5D5D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right; /* 오른쪽 정렬 */
+    margin-top: 0px; /* 글쓰기 폼에서 수정_오혜진 */
+    margin-right: 10px; 
+    width: auto; 
+}
+
+input[type="button"]:hover {
+    background-color: #737373; /* 호버 시 색상 변경 */
+}
+
+		.btn-group {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-top: 10px;
+		}
+
+		.btn-group button {
+			flex: 1;
+			/* 같은 사이즈로 배치 */
+			padding: 10px;
+			/* 버튼 안쪽 여백 */
+			text-align: center;
+			/* 텍스트 중앙 정렬 */
+		}
+         
+		/* 긴 내용이 있는 셀_재헌님추가_240926 */
+pre {
+    white-space: pre-wrap;   /* 줄바꿈을 유지하면서 자동 줄바꿈 */
+    word-wrap: break-word;   /* 긴 단어를 자동으로 줄바꿈 */
+    word-break: break-all;   /* 단어 중간에서도 줄바꿈 가능 */
+}
+.content {
+    max-height: 500px; /* 최대 높이 설정 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+    white-space: pre-wrap; /* 공백과 줄바꿈을 유지하면서 텍스트를 줄 바꿈 */
+    word-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+    word-break: break-all; /* 긴 단어나 연속된 영어 단어가 있으면 강제로 줄바꿈 */
+}
+		/* 반응형 조정 */
+		@media (max-width: 768px) {
+
+			table,
+			th,
+			td {
+				font-size: 0.9rem;
+			}
+
+			#header h1 {
+				font-size: 1.5rem;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1>Running Crew</h1>
+			<nav class="user-nav">
+				<a href="#">로그인</a>
+				<a href="#">로그아웃</a>
+				<a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">회원가입</a>
+			</nav>
+		</div>
+		<div class="container">
+	<div id="wrap">
+
+			<div id="container">
+					<jsp:include page="../main/boardMenu.jsp" />
+		<div id="section">
+			<h1 style="margin-bottom: 10px;"> running 게시글 등록</h1>
+					<hr style="border: none; border-top: 1px  solid #050099; margin-top: 5px;">
+				</div>
+			<form id="boardWriteForm">
+				<table border="1">
+					<tr>
+						<th width="100">제목</th>
+						<td><input type="text" id="subject" name="subject" size="70"
+							placeholder="제목 입력">
+							<div id="subjectDiv"></div></td>
+					</tr>
+					<tr>
+			
+						<th>내용</th>
+						
+						<td><textarea id="content" name="content" rows="20" cols="70"
+								placeholder="내용 입력"></textarea>
+							<div id="contentDiv"></div></td>
+						
+					</tr>
+	
+					<tr>
+					<div style= "width: 800px; margin-top: 5px;">
+						<td colspan="2" align="center"><input type="button"
+							value="글쓰기" id="boardWriteBtn"> 
+							<!--
+							<input type="reset" value="다시작성"></td>--> <!--잠깐숨기기-->
+								</span>
+					</div>
+					</tr>
+						
+				</table>
+			</form>
+		</div>
+	</div>
+<!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/boardWrite.js"></script>-->
+
+
+		<!-- 회원가입 모달 -->
+		<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="signupModalLabel">회원가입</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form id="signupForm">
+							<div class="mb-3">
+								<label for="username" class="form-label">사용자 이름</label>
+								<input type="text" class="form-control" id="username" required>
+							</div>
+							<div class="mb-3">
+								<label for="email" class="form-label">이메일 주소</label>
+								<input type="email" class="form-control" id="email" required>
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label">비밀번호</label>
+								<input type="password" class="form-control" id="password" required>
+							</div>
+							<button type="submit" class="btn btn-primary">가입하기</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer text-left">
+			<hr>
+			<p>&copy; 2024 Running Crew</p>
+		</div>
+	</div>
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
