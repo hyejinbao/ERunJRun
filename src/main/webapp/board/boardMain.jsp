@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,158 +11,27 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/style.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<style>
-		/* 공통 스타일 */
-		body {
-			font-family: 'Noto Sans KR', sans-serif;
-			background-color: #f9f9f9;
-		}
-
-		#wrap {
-			width: 80%;
-			margin: 0 auto;
-			background-color: #fff;
-			padding: 20px;
-		}
-
-		h1 {
-			font-size: 24px;
-			color: #050099;
-			margin-bottom: 20px;
-			text-align: left;
-			/* 왼쪽 정렬 */
-		}
-
-		.boardListDiv {
-			margin-top: 20px;
-			width: 100%;
-			padding: 0;
-		}
-
-		.board-item {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 10px 0;
-			border-bottom: 1px solid #eaeaea;
-		}
-
-		.board-item:last-child {
-			border-bottom: none;
-			/* 마지막 항목에 밑줄 제거 */
-		}
-
-		.board-item .subject {
-			flex: 1;
-			text-align: left;
-		}
-
-		.board-item .subject a {
-			color: #000;
-			text-decoration: none;
-			/*font-weight: bold;*/
-			margin-right: 5px;
-		}
-
-		.board-item .subject a:hover {
-			text-decoration: underline;
-			color: #0056b3;
-		}
-
-		.board-item .info {
-			display: flex;
-			align-items: center;
-			font-size: 12px;
-			color: #777;
-		}
-
-		.board-item .info span {
-			margin-left: 15px;
-		}
-
-		.board-item .info .nickname {
-			color: #999;
-			font-weight: bold;
-		}
-
-		.board-item .info .views {
-			color: #999;
-		}
-
-		.board-item .info .date {
-			color: #666;
-		}
-
-		#paging {
-			text-align: center;
-			margin-top: 20px;
-		}
-
-		#paging .page-link {
-			padding: 8px 12px;
-			margin: 0 5px;
-			color: #0056b3;
-			text-decoration: none;
-			border: 1px solid #ddd;
-			border-radius: 3px;
-		}
-
-		#paging .page-link:hover {
-			background-color: #f8f8f8;
-		}
-
-		#paging .current {
-			background-color: #007bff;
-			color: white;
-			border: 1px solid #007bff;
-		}
-
-		/* 버튼 스타일 */
-	input[type="button"] {
-    background-color: #5D5D5D;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    float: right; /* 오른쪽 정렬 */
-    margin-top: -60px; /* 위쪽 간격 */
-    margin-right: 10px; /* 오른쪽 간격 */
-    width: auto; /* 너비를 자동으로 설정 */
-}
-
-input[type="button"]:hover {
-    background-color: #737373; /* 호버 시 색상 변경 */
-}
-
-		input[type="button"]:hover {
-			background-color: #737373;
-		}
-	</style>
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/member.css">
+	<link rel="stylesheet" href="../css/imageWrite.css">
+	<link rel="stylesheet" href="../css/boardMain.css">
 </head>
 
 <body>
 	<div class="wrap">
 		<div class="header">
-			<h1>Running Crew</h1>
-			<nav class="user-nav">
-				<a href="#">로그인</a>
-				<a href="#">로그아웃</a>
-				<a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">회원가입</a>
-			</nav>
+			<jsp:include page="../main/header.jsp" />
 		</div>
 		<div class="container">
 			<!--혜진 게시판 추가 -->
 			<div id="wrap">
-				<div id="header">
-					<img alt="running" src="../image/runlist.png" width="100%" height="150"
-						style="cursor: pointer; margin-bottom:30px;"><br>
-					<h1 style="margin-bottom: 10px;"> running 게시판 전체</h1>
-					<hr style="border: none; border-top: 1px  solid #050099; margin-top: 5px;">
-				</div>
 				<div id="container">
+					<div id="header">
+						<img alt="running" src="../image/runlist.png" width="100%" height="150"
+							style="cursor: pointer; margin-bottom:30px;"><br>
+						<h1 style="margin-bottom: 10px;"> running 게시판 전체</h1>
+						<hr style="border: none; border-top: 1px  solid #050099; margin-top: 5px;">
+					</div>
 					<div id="section" class="boardListDiv">
 						<div class="board-item">
 							<div class="subject"><a href="#">제목테스트입니다 1</a></div>
@@ -194,14 +66,12 @@ input[type="button"]:hover {
 								<li class="page-item">
 									<a class="page-link" href="#">다음</a>
 								</li>
-
-
 							</ul>
 							<div style="margin-top: 20px;">
 							<input type="button" value="글쓰기" onclick="location.href='/projectMVC/board/boardList.do?pg=${pg}'">
 								</div>
 							</div>
-					</div>
+						</div>
 					</nav>
 				</div>
 			</div>
@@ -234,7 +104,6 @@ input[type="button"]:hover {
 					</form>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
@@ -260,15 +129,15 @@ input[type="button"]:hover {
 				const hit = Math.floor(Math.random() * 100);
 
 				htmlContent += `
-            <div class="board-item">
-                <div class="subject"><a href="#">${subject}</a></div>
-                <div class="info">
-                    <span class="nickname">${id}</span>
-                    <span class="date">${logtime}</span>
-                    <span class="views">조회수: ${hit}</span>
-                </div>
-            </div>
-        `;
+		            <div class="board-item">
+		                <div class="subject"><a href="#">${subject}</a></div>
+		                <div class="info">
+		                    <span class="nickname">${id}</span>
+		                    <span class="date">${logtime}</span>
+		                    <span class="views">조회수: ${hit}</span>
+		                </div>
+		            </div>
+        		`;
 			}
 
 			boardListDiv.innerHTML = htmlContent;
@@ -278,5 +147,7 @@ input[type="button"]:hover {
 		window.onload = generateDummyData;
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
 </body>
 </html>
