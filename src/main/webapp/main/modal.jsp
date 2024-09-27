@@ -58,16 +58,16 @@
 				                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				            </div>
 				            <div class="modal-body">
-				                <form action="../jsp/login.jsp" method="post" class="form">
+				                <form class="form" id="loginForm" name="loginForm">
 				                    <div class="mb-3 input-group">
 				                        <i class="fas fa-envelope"></i>
 				                        <input type="text" class="form-control" name="id" placeholder="ID" required>
 				                    </div>
 				                    <div class="mb-3 input-group">
 				                        <i class="fas fa-lock"></i>
-				                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+				                        <input type="password" class="form-control" name="pwd" placeholder="Password" required>
 				                    </div>
-				                    <button type="submit" class="btn btn-primary">로그인</button>
+				                    <input type="button" id="loginBtn" class="btn btn-primary" value="로그인">
 				                </form>
 				                <div class="mt-3 text-center">
 				                    <p>
