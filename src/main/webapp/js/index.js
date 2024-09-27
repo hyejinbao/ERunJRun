@@ -19,17 +19,20 @@
   });
   /*이메일선택*/
   function emailChange() {
-      var email2 = document.getElementById("email2").value;
+      var email2 = document.getElementById("email2");
+      var selectedValue = email2.value;
 
-      if (email2 === "직접입력") {
-          email2 = ""; // 직접입력을 선택하면 email2를 비워둠
+      if (selectedValue === "직접입력") {
+          email2.value = ""; // 직접입력을 선택하면 email2를 비워둠
           email2.focus();    // email2 필드에 포커스를 맞춤
       } else {
-          email2.value = email2; // 선택한 도메인으로 email2 필드를 채움
+          email2.value = selectedValue; // 선택한 도메인으로 email2 필드를 채움
       }
   }
-  /*이메일보기*/
-  function showDatalist() {
+
+  document.getElementById("email2").addEventListener("focus", function() {
       var email2 = document.getElementById("email2");
-      email2.setAttribute('list', 'email2_list'); // 포커스될 때 datalist를 연결
-  }
+      setTimeout(function() {
+          email2.value = ""; // 포커스될 때 필드 비우기
+      }, 0); // 잠시 후에 필드를 비움
+  });
