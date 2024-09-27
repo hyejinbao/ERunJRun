@@ -18,6 +18,7 @@
 	  <div class="header">
 	  	<jsp:include page="../main/header.jsp" />
 	  </div>
+	  
 	  <div class="container">
 	  	  <div class="board-header">
 			  <h1>오운완</h1>
