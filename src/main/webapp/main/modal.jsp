@@ -171,7 +171,7 @@
 						                    <div class="mb-3">
 						                        <label for="myPagePwd" class="form-label">비밀번호</label>
 						                        <input type="password" class="form-control" name="pwd" id="myPagePwd" placeholder="수정할 비밀번호를 입력해주세요">
-												<div id="myPagePwdDiv"></div>
+												<div id="myPagePwdDiv" style="color: red;"></div>
 						                    </div>
 						                    <div class="mb-3">
 						                        <label for="myPageRePwd" class="form-label">비밀번호확인</label>
@@ -181,6 +181,7 @@
 											<div class="mb-3">
 												<label for="myPageName" class="form-label">이름</label>
 												<input type="text" class="form-control" id="myPageName" name="name" value="${sessionScope.memberDTO.name}">
+												<div id="myPageNameDiv" style="color: red;"></div>
 											</div>
 											<div class="mb-3">
 												<div class="mb-3">
@@ -213,11 +214,11 @@
 													</div>
 											</div>
 											<div class="agree-check">
-												<input type="checkbox" name="agreement" id="agreement" checked required /> 이용약관 개인정보 수집 및 이용, 마케팅 활용
+												<input type="checkbox" name="agreement" id="myPageAgreementCheckbox" checked readonly/> 이용약관 개인정보 수집 및 이용, 마케팅 활용
 												선택에 모두 동의합니다.
 											</div>
 											<div class="agreebtn"></div>
-											<div id="agreeDiv"></div>
+											<div id="myPageAgreeDiv" style="color: red;"></div>
 											<div class="myPageBtn">
 												<button type="button" id="updateBtn" class="updateBtn btn-primary">수정하기</button>
 												<button type="button" id="deleteBtn" class="deleteBtn btn-primary">회원탈퇴</button>

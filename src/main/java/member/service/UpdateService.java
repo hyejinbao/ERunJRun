@@ -29,6 +29,7 @@ public class UpdateService implements CommandProcess {
 
         MemberDAO memberDAO = MemberDAO.getInstance();
         boolean isUpdated = memberDAO.memberUpdate(memberDTO);
+        System.out.println("isUpdated = " + isUpdated);
         if (isUpdated) {
             response.getWriter().write("success");
         }else {
