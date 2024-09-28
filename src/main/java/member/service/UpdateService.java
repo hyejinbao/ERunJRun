@@ -1,14 +1,14 @@
 package member.service;
 
 import com.control.CommandProcess;
-
 import member.bean.MemberDTO;
 import member.dao.MemberDAO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class WriteService implements CommandProcess {
+public class UpdateService implements CommandProcess {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         String id = request.getParameter("id");
@@ -17,7 +17,7 @@ public class WriteService implements CommandProcess {
         String email1 = request.getParameter("email1");
         String email2 = request.getParameter("email2");
         String birth = request.getParameter("birth");
-        int gender = Integer.parseInt(request.getParameter("gender"));
+        int gender = Integer.parseInt(request.getParameter("myPageGender"));
         MemberDTO memberDTO = new MemberDTO();
         memberDTO.setId(id);
         memberDTO.setName(name);
@@ -28,7 +28,14 @@ public class WriteService implements CommandProcess {
         memberDTO.setGender(gender);
 
         MemberDAO memberDAO = MemberDAO.getInstance();
-        memberDAO.memberWrite(memberDTO);
+        boolean isUpdated = memberDAO.memberUpdate(memberDTO);
+        if (isUpdated) {
+            response.getWriter().write("success");
+        }else {
+            response.getWriter().write("fail");
+        }
+        HttpSession session = request.getSession();
+        session.invalidate();
         return "none";
     }
 }

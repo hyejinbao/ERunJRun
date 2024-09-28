@@ -65,18 +65,22 @@ $('#writeBtn').click(function (){
 
 /*로그인*/
 $('#loginBtn').click(function (){
-       $.ajax({
-           type: 'POST',
-           url: './user/login.do',
-           data: $('#loginForm').serialize(),
-           success: function (data){
-               location.href = './index.do'
-           },error: function(xhr, status, error) {
-               console.error('AJAX 요청 실패: ', error);
-               console.error('상태: ', status);
-               console.dir(xhr);
-           }
-       });
+    $.ajax({
+        type: 'POST',
+        url: './user/login.do',
+        data: $('#loginForm').serialize(),
+        success: function (response) {
+            if (response.trim() === "success") {
+                location.href = './index.do'
+            }else if(response.trim() === "fail") {
+                $('#loginCheckDiv').html("아이디 혹은 비밀번호가 일치하지 않습니다.")
+            }
+        }, error: function (xhr, status, error ,data) {
+            console.error('AJAX 요청 실패: ', error);
+            console.error('상태: ', status);
+            console.dir(xhr);
+        }
+    });
 });
 
 /*로그아웃*/
@@ -136,11 +140,16 @@ $(document).ready(function() {
     $('#repwd').on('focusout', function() {
         validatePasswords();
     });
-
+    $('#myPageRePwd').on('focusout', function() {
+        validatePasswords();
+    })
     function validatePasswords() {
         var pwd = $('#pwd').val();
         var repwd = $('#repwd').val();
+        var myPagePwd = $('#myPagePwd').val();
+        var myPageRePwd = $('#myPageRePwd').val();
         var messageElement = $('#pwdDiv'); // 비밀번호 입력란 아래 메시지 표시할 요소
+        var messageElement = $('#myPagePwdDiv'); // 비밀번호 입력란 아래 메시지 표시할 요소
 
         // 초기화
         messageElement.text('');
@@ -157,6 +166,37 @@ $(document).ready(function() {
             messageElement.text("비밀번호가 일치합니다.");
             messageElement.css('color', 'green');
         }
+        var myPagePwdPattern = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+        if (!pwdPattern.test(myPagePwd)) {
+            messageElement.text("비밀번호는 영문자와 숫자의 조합으로 6자리 이상이어야 합니다.");
+            messageElement.css('color', 'red');
+        } else if (myPagePwd !== myPageRePwd) {
+            messageElement.text("비밀번호가 맞지 않습니다.");
+            messageElement.css('color', 'red');
+        } else {
+            messageElement.text("비밀번호가 일치합니다.");
+            messageElement.css('color', 'green');
+        }
     }
 });
-
+/*마이페이지 수정*/
+    $('#updateBtn').click(function () {
+        $.ajax({
+            type: 'POST', //내보낸다
+            url: './user/update.do',//해당 URL로
+            data: $('form[name="myPageForm"]').serialize(),//form안에 있는 모든 data를
+            success: function (response) {
+                if (response.trim() == 'fail') {
+                    alert('회원정보 수정 실패');
+                } else {
+                    alert('회원정보 수정 완료');
+                    location.href = '/index.do';
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX 요청 실패: ', error);
+                console.error('상태: ', status);
+                console.dir(xhr);
+            }
+        });
+    });

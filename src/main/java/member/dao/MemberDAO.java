@@ -55,4 +55,15 @@ public class MemberDAO {
         }
     }
 
+    public boolean memberUpdate(MemberDTO memberDTO) {
+            boolean isUpdated = false;
+            SqlSession sqlSession = sqlSessionFactory.openSession();
+            sqlSession.update("memberSQL.memberUpdate", memberDTO);
+            if (memberDTO != null){
+                isUpdated = true;
+            }
+            sqlSession.commit();
+            sqlSession.close();
+        return isUpdated;
+    }
 }

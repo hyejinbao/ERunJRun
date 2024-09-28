@@ -20,17 +20,21 @@ public class LoginService implements CommandProcess{
 	    
 	    MemberDAO memberDAO = MemberDAO.getInstance();
 	    MemberDTO memberDTO = memberDAO.loginMember(id, pwd);
-	    System.out.println(memberDTO.getName());
-	    System.out.println(memberDTO.getId());
 	    if (memberDTO != null) {
 	        check = true;
 	        //세션 생성
 	        HttpSession session = request.getSession();
-	        
+
 	        session.setAttribute("memberDTO", memberDTO);
 	        String email = memberDTO.getEmail1() + "@" + memberDTO.getEmail2();
 	        session.setAttribute("memberEmail", email);
-	    }
+			response.getWriter().write("success");
+			
+			System.out.println(memberDTO.getName());
+			System.out.println(memberDTO.getId());
+	    }else {
+			response.getWriter().write("fail");
+		}
 	    request.setAttribute("check", check);
 	    
 		return "none";
