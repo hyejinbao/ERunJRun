@@ -26,6 +26,8 @@ public class MemberDAO {
             }
         }
 
+
+
     public int memberWrite(MemberDTO memberDTO) {
         int result = 0;
         SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -49,21 +51,30 @@ public class MemberDAO {
 	}
 
     public boolean isExistId(String id) {
-        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            Integer count = sqlSession.selectOne("memberSQL.isExistId", id);
-            return count != null && count > 0; // count가 0보다 크면 true 반환
-        }
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        Integer count = sqlSession.selectOne("memberSQL.isExistId", id);
+        return count != null && count > 0; // count가 0보다 크면 true 반환
+
     }
 
     public boolean memberUpdate(MemberDTO memberDTO) {
-            boolean isUpdated = false;
-            SqlSession sqlSession = sqlSessionFactory.openSession();
-            sqlSession.update("memberSQL.memberUpdate", memberDTO);
-            if (memberDTO != null){
-                isUpdated = true;
-            }
-            sqlSession.commit();
-            sqlSession.close();
+        boolean isUpdated = false;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        sqlSession.update("memberSQL.memberUpdate", memberDTO);
+        if (memberDTO != null){
+            isUpdated = true;
+        }
+        sqlSession.commit();
+        sqlSession.close();
         return isUpdated;
+    }
+
+    public boolean deleteMember(String id) {
+        boolean isDeleted = false;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        sqlSession.delete("memberSQL.memberDelete", id);
+        sqlSession.commit();
+        sqlSession.close();
+        return isDeleted;
     }
 }
