@@ -270,6 +270,40 @@
 		        </div>
 		    </div>
 		</div>
+		
+		<!-- 오혜진 다시 추가 -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+	$("#boardUpdateBtn").click(function(){
+		 $('#subjectDiv').empty(); 
+		$('#contentDiv').empty();
+		
+		    if($('#subject').val() == '')
+		        $('#subjectDiv').html('제목 입력');
+		    else if($('#content').val() == '')
+		        $('#contentDiv').html('내용 입력');
+		    //else if($('#pwd').val().trim() != $('#repwd').val())
+		      //  $('#repwdDiv').html('비밀번호가 맞지 않습니다');/
+		    else
+		        $.ajax({
+		            type: 'post',
+		            url: '/ERunJRun/board/boardUpdate.do',
+		            data:{
+		            	'seq': $('#seq').val(),
+		            	'subject':$('#subject').val(), 
+		            	'content':$('#content').val()
+		            },
+		            success: function(){
+		                alert('글 수정 완료');
+		                location.href = "/ERunJRun/board/boardView.do?pg=" +$('#pg').val();
+		            },
+		            error: function(e){
+		                console.log(e);
+		            }
+		        });
+		
+	});
+	</script>
 	  <div class="footer text-left">
 	  	<jsp:include page="../main/footer.jsp" />
 	  </div>

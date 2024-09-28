@@ -50,7 +50,8 @@
 		<div class="navbar_menu">
 		  <a href="#">홈으로</a>
 		  <a href="#">공지</a>
-		  <a href="#">게시판</a>
+		 <a href="./board/boardWriteForm.do">게시판</a> <!--오혜진수정 -->
+		 		 
 		  <a href="#">오운완</a>
 		  <div class="navbar_burger_back">
 		    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
