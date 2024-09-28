@@ -61,12 +61,13 @@
 				                <form class="form" id="loginForm" name="loginForm">
 				                    <div class="mb-3 input-group">
 				                        <i class="fas fa-envelope"></i>
-				                        <input type="text" class="form-control" name="id" placeholder="ID" required>
+				                        <input type="text" class="form-control" name="id"  placeholder="ID" required>
 				                    </div>
 				                    <div class="mb-3 input-group">
 				                        <i class="fas fa-lock"></i>
 				                        <input type="password" class="form-control" name="pwd" placeholder="Password" required>
 				                    </div>
+									<div align="center" id="loginCheckDiv" style="color: red;"></div>
 				                    <input type="button" id="loginBtn" class="btn btn-primary" value="로그인">
 				                </form>
 				                <div class="mt-3 text-center">
@@ -162,49 +163,52 @@
 						                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						            </div>
 						            <div class="modal-body">
-						                <form id="myPageForm">
+						                <form id="myPageForm" name="myPageForm">
 						                    <div class="mb-3">
-						                        <label for="myPageUserid" class="form-label">아이디</label>
-						                        <input type="text" class="form-control" id="myPageUserid" placeholder="userId들어갈 곳" >
+						                        <label for="myPageId" class="form-label">아이디</label>
+						                        <input type="text" class="form-control" name="id" id="myPageId" value="${sessionScope.memberDTO.id}" readonly>
 						                    </div>
 						                    <div class="mb-3">
-						                        <label for="myPagePassword" class="form-label">비밀번호</label>
-						                        <input type="password" class="form-control" id="myPagePassword" placeholder="수정할 비밀번호" required>
+						                        <label for="myPagePwd" class="form-label">비밀번호</label>
+						                        <input type="password" class="form-control" name="pwd" id="myPagePwd" placeholder="수정할 비밀번호를 입력해주세요">
+												<div id="myPagePwdDiv"></div>
 						                    </div>
 						                    <div class="mb-3">
-						                        <label for="myPageRepassword" class="form-label">비밀번호확인</label>
-						                        <input type="password" class="form-control" id="myPageRepassword" placeholder="수정할 비밀번호 확인" required>
+						                        <label for="myPageRePwd" class="form-label">비밀번호확인</label>
+						                        <input type="password" class="form-control" name="repwd" id="myPageRePwd" placeholder="수정할 비밀번호를 재입력해주세요" >
+												<div id="myPageRePwdDiv"></div>
 						                    </div>
 											<div class="mb-3">
-												<label for="myPageUsername" class="form-label">이름</label>
-												<input type="text" class="form-control" id="myPageUsername" placeholder="수정할 이름" required>
+												<label for="myPageName" class="form-label">이름</label>
+												<input type="text" class="form-control" id="myPageName" name="name" value="${sessionScope.memberDTO.name}">
 											</div>
 											<div class="mb-3">
-												<td >
+												<div class="mb-3">
 													<label for="myPageEmail1" class="form-label">이메일</label>
 														<div class="input-group mb-3">
-													  	<input type="text" class="emailform1" id="myPageEmail1" name="myPageEmail1" required>
-													  	@
-													  	<input type="text" class="emailform2" oninput="emailChange()" onfocus="showDatalist()"
-															 list="myPageEmail2_list" id="myPageEmail2" name="myPageEmail2">
+														<input type="text" class="emailform1" id="myPageEmail1" name="email1" value="${sessionScope.memberDTO.email1}">
+														@
+														<input type="text" class="emailform2" oninput="emailChange()"
+															 list="myPageEmail2_list" id="myPageEmail2" name="email2" value="${sessionScope.memberDTO.email2}" autocomplete="off">
 														<input type="button" value="이메일 인증" id="myPageEmailBtn" class="emailform3">
 														<datalist id="myPageEmail2_list">
-															<option value="직접입력">직접입력</option>
+															<option value="직접입력"></option>
 															<option value="naver.com"/>
 															<option value="gmail.com"/>
 															<option value="daum.net"/>
 														</datalist>
+														<div id="myPageEmailDiv" style="color: red;"></div>
 														</div>
-												</td>
+												</div>
 											</div>
 											<div class="mb-3">
 												<label for="birth" class="form-label">생년월일</label>
-												<input type="text" class="form-control" id="myPageBirth" placeholder="birth들어갈곳" required>
+												<input type="text" class="form-control" id="myPageBirth" name="birth" value="${sessionScope.memberDTO.birth}">
 											</div>
 											<div class="mb-3">
 											    <label class="form-label">성별</label>
 													<div>
-														<input type="radio" class="genderform" id="myPageGender1" name="myPageGender" value="1" checked/>남자
+														<input type="radio" class="genderform" id="myPageGender1" name="myPageGender" value="1" />남자
 														<input type="radio" class="genderform" id="myPageGender2" name="myPageGender" value="2" />여자
 													</div>
 											</div>
@@ -215,14 +219,23 @@
 											<div class="agreebtn"></div>
 											<div id="agreeDiv"></div>
 											<div class="myPageBtn">
-												<button type="button" class="updateBtn btn-primary">수정하기</button>
-												<button type="button" class="deleteBtn btn-primary">회원탈퇴</button>
+												<button type="button" id="updateBtn" class="updateBtn btn-primary">수정하기</button>
+												<button type="button" id="deleteBtn" class="deleteBtn btn-primary">회원탈퇴</button>
 											</div>
 						                </form>
 						            </div>
 						        </div>
 						    </div>
 						</div>
-
+<script type="text/javascript">
+    window.onload = function () {
+        const gender = ${sessionScope.memberDTO.gender !=null ? sessionScope.memberDTO.gender : 0}; // Java로부터 성별 값 가져오기
+        if (gender === 1) {
+            document.getElementById('myPageGender1').checked = true;
+        } else if (gender === 2) {
+            document.getElementById('myPageGender2').checked = true;
+        }
+    };
+</script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/member.js"></script>
