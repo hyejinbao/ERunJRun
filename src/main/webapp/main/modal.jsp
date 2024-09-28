@@ -94,12 +94,12 @@
 				                    <div class="mb-3">
 				                        <label for="id" class="form-label">아이디</label>
 				                        <input type="text" class="form-control" id="id" name="id" placeholder="아이디를 입력해주세요" required>
-                                        <div id="idDiv"></div>
+                                        <div id="idDiv" style="color: red;"></div>
 				                    </div>
 				                    <div class="mb-3">
 				                        <label for="pwd" class="form-label">비밀번호</label>
 				                        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="비밀번호를 입력해주세요" required>
-                                        <div id="pwdDiv"></div>
+                                        <div id="pwdDiv" style="color: red;"></div>
 				                    </div>
 				                    <div class="mb-3">
 				                        <label for="repwd" class="form-label">비밀번호확인</label>
@@ -109,22 +109,23 @@
 									<div class="mb-3">
 										<label for="name" class="form-label">이름</label>
 										<input type="text" class="form-control" id="name" name="name" placeholder="본명을 입력해주세요" required>
-                                        <div id="nameDiv"></div>
+                                        <div id="nameDiv" style="color: red;"></div>
 									</div>
 									<div class="mb-3">
                                         <label for="email1" class="form-label">이메일</label>
                                             <div class="input-group mb-3">
-                                            <input type="text" class="emailform1" id="email1" name="email1" required>
+                                            <input type="text" class="emailform1" id="email1" name="email1">
                                             @
-                                            <input type="text" class="emailform2" oninput="emailChange()" onfocus="showDatalist()"
-                                                 list="email2_list" id="email2" name="email2">
+                                            <input type="text" class="emailform2" oninput="emailChange()"
+                                                 list="email2_list" id="email2" name="email2" autocomplete="off">
                                             <input type="button" value="이메일 인증" id="emailBtn" class="emailform3">
                                             <datalist id="email2_list">
-                                                <option value="직접입력">직접입력</option>
+                                                <option value="직접입력"></option>
                                                 <option value="naver.com"/>
                                                 <option value="gmail.com"/>
                                                 <option value="daum.net"/>
                                             </datalist>
+											<div id="emailDiv" style="color: red;"></div>
                                             </div>
 									</div>
 									<div class="mb-3">
@@ -139,10 +140,11 @@
 											</div>
 									</div>
 									<div class="agree-check">
-										<input type="checkbox" name="agreement" required /> 이용약관 개인정보 수집 및 이용, 마케팅 활용
+										<input type="checkbox" name="agreement" id="agreementCheckbox"/> 이용약관 개인정보 수집 및 이용, 마케팅 활용
 										선택에 모두 동의합니다.
 									</div>
 									<div class="agreebtn"></div>
+									<div id="agreementDiv" style="color: red;"></div>
                                     <div>
                                         <input type="button" value="가입하기" id="writeBtn" class="btn btn-primary">
                                     </div>
@@ -207,10 +209,11 @@
 													</div>
 											</div>
 											<div class="agree-check">
-												<input type="checkbox" name="agreement" checked required /> 이용약관 개인정보 수집 및 이용, 마케팅 활용
+												<input type="checkbox" name="agreement" id="agreement" checked required /> 이용약관 개인정보 수집 및 이용, 마케팅 활용
 												선택에 모두 동의합니다.
 											</div>
 											<div class="agreebtn"></div>
+											<div id="agreeDiv"></div>
 											<div class="myPageBtn">
 												<button type="button" class="updateBtn btn-primary">수정하기</button>
 												<button type="button" class="deleteBtn btn-primary">회원탈퇴</button>
