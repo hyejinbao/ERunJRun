@@ -1,20 +1,16 @@
 package image.service;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.control.CommandProcess;
-
 import image.bean.ImageDTO;
 import image.dao.ImageDAO;
 
-public class ImageBoardService implements CommandProcess {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
-	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int page = 1;
+public class ImageBoardService implements CommandProcess {
+    public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+        int page = 1;
         String pageParam = request.getParameter("page");
         if (pageParam != null && !pageParam.isEmpty()) {
             page = Integer.parseInt(pageParam);
@@ -45,6 +41,5 @@ public class ImageBoardService implements CommandProcess {
         request.setAttribute("imageType", imageType); // 추가된 부분
 
         return "/imageBoard/imageBoard.jsp";
-	}
-
+    }
 }

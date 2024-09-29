@@ -15,7 +15,7 @@ import image.bean.ImageDTO;
 public class ImageDAO {
 	private static ImageDAO instance = new ImageDAO();
 	private SqlSessionFactory sqlSessionFactory;
-	
+
 	public ImageDAO() {
 		try {
 			Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
@@ -24,11 +24,11 @@ public class ImageDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static ImageDAO getInstance() {
 		return instance;
 	}
-	
+
 	public boolean writeImage(ImageDTO imageDTO) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		boolean check = false;
@@ -49,6 +49,7 @@ public class ImageDAO {
 	    sqlSession.close();
 	    return list;
 	}
+	
 	public int getTotalImagesByType(int imageType) {
 	    SqlSession sqlSession = sqlSessionFactory.openSession();
 	    HashMap<String, Object> map = new HashMap<>();

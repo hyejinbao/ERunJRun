@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,12 +20,13 @@
 	  <div class="header">
 	  	<jsp:include page="../main/header.jsp" />
 	  </div>
-	  
+
 	  <div class="container">
  		  <jsp:include page="../main/modal.jsp" />
 	  	  <div class="board-header">
 			  <h1>오운완</h1>
 	  	  </div>
+
 	      <!-- 카드 섹션 -->
 			<section class="content d-flex flex-wrap justify-content-center mb-5 card-section">
 			    <div class="row row-cols-1 row-cols-md-3 g-4" id="cardSection">
@@ -63,7 +65,7 @@
 		        <a href="?page=${currentPage + 1}&imageType=${param.imageType}">다음</a>
 		    </c:if>
 	  </div>
-	  
+
 	  <div class="footer text-left">
 	  	<jsp:include page="../main/footer.jsp" />
 	  </div>

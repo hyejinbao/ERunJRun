@@ -22,7 +22,7 @@ public class ImageWriteService implements CommandProcess {
 		//실제 폴더 위치 가져오기
 		String realFolder = request.getServletContext().getRealPath("/storage");
 		System.out.println("realFolder = " + realFolder);
-	
+		
 		//업로드
 		//request를 MultipartRequest가 관리
 		//realFolder에다가 저장
@@ -31,7 +31,6 @@ public class ImageWriteService implements CommandProcess {
 		//new DefaultFileRenamePolicy() - 똑같은 이름이 들어올 시 파일명을 변경해서 올린다
 		//MultipartRequest multi = new MultipartRequest(request, realFolder, 5 * 1024 * 1024, "UTF-8");
 		MultipartRequest multi = new MultipartRequest(request, realFolder, 5 * 1024 * 1024, "UTF-8", new DefaultFileRenamePolicy());
-	
 		HttpSession session = request.getSession();
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("memberDTO");
 		//데이터
@@ -40,14 +39,12 @@ public class ImageWriteService implements CommandProcess {
 		String content = multi.getParameter("imageDescription");
 		String image = multi.getOriginalFileName("image1");
 		int imageType = Integer.parseInt(multi.getParameter("imageType"));
-	
 		String newFileName = UUID.randomUUID().toString() + getFileExtension(image);
 		File oldFile = new File(realFolder, image);
 		File newFile = new File(realFolder, newFileName);
 		if (oldFile.exists()) {
 			oldFile.renameTo(newFile); // 파일 이름 변경
 		}
-	
 		ImageDTO imageDTO = new ImageDTO();
 		imageDTO.setId(id);
 		imageDTO.setContent(content);
@@ -66,5 +63,4 @@ public class ImageWriteService implements CommandProcess {
 		}
 		return ""; // 확장자가 없으면 빈 문자열 리턴
 	}
-
 }
