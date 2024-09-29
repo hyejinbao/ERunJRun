@@ -18,7 +18,7 @@ $(function(){
 			success :
 			 (function() {
 				alert("글쓰기완료");
-				location.href = "/ERunJRun/board/boardView.do";
+				location.href = "/ERunJRun/board/boardMain.do?pg=1";
 			}),
 			
 			error : function(e){
