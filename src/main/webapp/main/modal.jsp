@@ -9,12 +9,14 @@
 		                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		            </div>
 		            <div class="modal-body">
-		                <form action="../jsp/uploadImage.jsp" method="post" enctype="multipart/form-data" class="form">
-		                        <label for="image1" class="form-label">업로드할 이미지 선택</label>
+		                <form id="imageWriteForm">
+	                        <label for="image1" class="form-label">업로드할 이미지 선택</label>
+		      				<input type="hidden" name="imageType" id="imageType" value="1" readonly>
 		                    <div class="imageWriteMb-3">
 								<div class="image-upload-container">
-									<img id="showing"/>
-										<div class="camera">
+									<img id="showImg"/>
+										<div class="camera" id="camera">
+											<!-- 카메라 svg 코드(일러스트 이미지) -->
 											<svg width="50px" height="50px" viewBox="0 0 32 32" id="svg5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 												<defs id="defs2"/>
 													<g id="layer1" transform="translate(-108,-196)">
@@ -35,7 +37,7 @@
 		                        <label for="imageDescription" class="form-label">이미지 설명</label>
 		                        <textarea class="form-control" id="imageDescription" name="imageDescription" rows="3" placeholder="이미지에 대한 설명을 입력해주세요." required></textarea>
 		                    </div>
-		                    <button type="button" class="btn btn-primary">업로드</button>
+		                    <button type="button" id="imageWriteBtn" class="btn btn-primary">업로드</button>
 		                </form>
 		                <div class="mt-3 text-center">
 		                    <p>
@@ -221,13 +223,39 @@
 											<div id="myPageAgreeDiv" style="color: red;"></div>
 											<div class="myPageBtn">
 												<button type="button" id="updateBtn" class="updateBtn btn-primary">수정하기</button>
-												<button type="button" id="deleteBtn" class="deleteBtn btn-primary">회원탈퇴</button>
+												<button type="button" id="deleteBtn" class="deleteBtn btn-primary"
+														data-bs-toggle="modal" data-bs-target="#deleteModal">회원탈퇴</button>
 											</div>
 						                </form>
 						            </div>
 						        </div>
 						    </div>
 						</div>
+<!-- 비밀번호 입력 모달 -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">회원탈퇴</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form" id="deleteForm" name="deleteForm">
+                    <div class="mb-3">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="deletePwd" name="deletePwd" class="form-control" placeholder="비밀번호를 입력하세요" style="margin-top: 20px;">
+                    </div>
+                    <div align="center" id="deleteCheckDiv" style="color: red;"></div>
+                </form>
+            </div>
+            <div class="deleteModal-footer">
+                <button type="button" id="confirmDeleteBtn" class="deleteModalBtn btn-primary">회원탈퇴</button>
+                <button type="button" class="cancelModalBtn btn-primary" data-bs-toggle="modal" data-bs-target="#myPageModal">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     window.onload = function () {
         const gender = ${sessionScope.memberDTO.gender !=null ? sessionScope.memberDTO.gender : 0}; // Java로부터 성별 값 가져오기

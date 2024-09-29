@@ -12,16 +12,26 @@ public class DeleteService implements CommandProcess {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         String id = request.getParameter("id");
-        MemberDAO memberDAO = MemberDAO.getInstance();
-        boolean result = memberDAO.deleteMember(id);
-        System.out.println("result: " + result);
-        if(result) {
-            response.getWriter().write("fail");
-        }else {
-            response.getWriter().write("success");
-        }
+        String pwd =request.getParameter("pwd");
+
         HttpSession session = request.getSession();
-        session.invalidate();
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute("memberDTO");
+        System.out.println("memberDTO.getPwd():"+ memberDTO.getPwd());
+        if(memberDTO != null && memberDTO.getPwd().equals(pwd)){
+
+            MemberDAO memberDAO = MemberDAO.getInstance();
+            boolean result = memberDAO.deleteMember(id);
+
+            if(result) {
+                response.getWriter().write("success");
+                session.invalidate();
+            }else {
+                response.getWriter().write("fail");
+            }
+
+        }else {
+            response.getWriter().write("fail");
+        }
         return "none";
     }
 }

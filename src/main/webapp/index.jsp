@@ -32,11 +32,13 @@
 	      </div>
 	      
 	      <div id="crewBtn">
-			  <input type="button" value="크루 모집" onclick="location.href='./main/imageBoardList.jsp'">
-		      <input type="button" value="오운완">
+			  <input type="button" value="크루 모집" onclick="changeType(1)">
+		      <input type="button" value="오운완" onclick="changeType(2)">
 	      </div>
 	      <div id="crewWriteBtn">
-		      <input type="button" value="글 등록" onclick="location.href='./main/imageBoardWrite.do'">
+	      <c:if test="${sessionScope.memberDTO.id != null}">
+		      <input type="button" value="글 등록" data-bs-toggle="modal" data-bs-target="#imageWriteModal">
+	      </c:if>
 	      </div>
 	      
 	      <!-- 카드 섹션 -->
@@ -88,5 +90,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/image.js"></script>
 </body>
 </html>

@@ -27,3 +27,10 @@
     display: flex;
     justify-content: center;
 }
+
+#showImg {
+	width: 100%;   /* 이미지 컨테이너에 맞게 너비 조정 */
+    height: auto;  /* 비율에 맞게 높이 자동 조정 */
+    display: block;
+    margin: 0 auto;
+}
