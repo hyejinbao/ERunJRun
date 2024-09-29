@@ -37,7 +37,7 @@
 		    
 		    <div class="card-container">
 		        <div class="card">
-		            <h3>Daily Event</h3>
+		            <h3>미승인 회원</h3>
 		            <p>유효한 이벤트: 0개<br>종료된 이벤트: 0개</p>
 		        </div>
 		        <div class="card">
