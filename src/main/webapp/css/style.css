@@ -130,15 +130,26 @@ header h1 {
     gap: 1rem;
 }
 
+#crewBtn {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
 #crewBtn input {
 	width: 110px;
 	margin: 10px;
 }
 
-#crewBtn {
+#crewWriteBtn {
 	display: flex;
-	justify-content: center;
+	flex-direction: row-reverse;
 	margin-bottom: 30px;
+}
+
+#crewWriteBtn input {
+	width: 110px;
+	margin-right: 20px;
 }
 
 .user-nav a {

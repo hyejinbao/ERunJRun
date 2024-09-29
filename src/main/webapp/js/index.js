@@ -17,6 +17,7 @@
     navbarMenu.classList.remove('active');
     navbarOverlay.classList.remove('active');
   });
+  
   /*이메일선택*/
   function emailChange() {
       var email2 = document.getElementById("email2");
@@ -53,3 +54,4 @@
             email2.value = ""; // 포커스될 때 필드 비우기
         }, 0); // 잠시 후에 필드를 비움
     });
+    

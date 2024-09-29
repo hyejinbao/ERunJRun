@@ -33,7 +33,10 @@
 	      
 	      <div id="crewBtn">
 			  <input type="button" value="크루 모집" onclick="location.href='./main/imageBoardList.jsp'">
-		      <input type="button" value="오운완실패">
+		      <input type="button" value="오운완">
+	      </div>
+	      <div id="crewWriteBtn">
+		      <input type="button" value="글 등록" onclick="location.href='./main/imageBoardWrite.do'">
 	      </div>
 	      
 	      <!-- 카드 섹션 -->
