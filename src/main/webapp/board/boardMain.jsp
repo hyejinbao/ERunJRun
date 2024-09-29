@@ -55,7 +55,7 @@
 				</div>
 
 				<div style="margin-top: 20px;">
-					<input type="button" id="boardWriteBtn" value="글쓰기" onclick="location.href='./board/boardWriteForm.do'">
+					<input type="button" id="boardWriteBtn" value="글쓰기" onclick="location.href='./boardWriteForm.do'">
 				</div>
 			</div>
 		</div>

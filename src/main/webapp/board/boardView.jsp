@@ -29,8 +29,7 @@
 		 	<jsp:include page="../main/modal.jsp" />
 			<div id="section" class="boardViewDiv">
 				<form id="boardViewForm">
-					<input type="hidden" id="memberDTO"
-						value="${sessionScope.memberDTO }" />
+					<input type="hidden" id="memberDTO" value="${sessionScope.memberDTO }" />
 					<!-- 오혜진 수정 -->
 					<input type="hidden" name="seq" id="seq" value="${boardDTO.seq }" />
 					<input type="hidden" name="pg" id="pg" value="${requestScope.pg }" />
@@ -62,11 +61,12 @@
 
 					<div style="text-align: center;">
 						<div class="btn-group">
-							<span id="boardViewSpan"> <input type="button" value="목록" onclick="location.href='./boardMain.do?pg=${pg}'"
+							<input type="button" value="목록" onclick="location.href='./boardMain.do?pg=${pg}'"
 								style="display: inline-block;"> 
-								<input type="button" value="수정" id="boardUpdateFormBtn" style="display: inline-block;"> 
+						<span id="boardViewSpan"> 
+								<input type="button" value="수정" id="boardUpdateBtn" style="display: inline-block;"> 
 								<input type="button" value="삭제" id="boardDeleteBtn" style="display: inline-block;">
-							</span>
+							</span> 
 						</div>
 					</div>
 				</form>
@@ -77,9 +77,8 @@
 	<div class="footer text-left">
 		<jsp:include page="../main/footer.jsp" />
 	</div>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" src="../js/index.js"></script>
 	<script type="text/javascript" src="../js/member.js"></script>

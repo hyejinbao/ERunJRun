@@ -1,13 +1,15 @@
 	$(function(){
     if($('#memberDTO').val() == $('#id').text()){
-		$('#boardViewSpan').show();
+		$('#boardViewSpan').hide();
 		
 	}
 	else{
-		$('#boardViewSpan').hide();
+		$('#boardViewSpan').show();
 	}
 	//글수정
-	$('#boardUpdateFormBtn').click(function(){
+	$('#boardUpdateBtn').click(function(){
+		console.log("seq:", $('#seq').val()); // 콘솔
+		console.log("pg:", $('#pg').val()); // 콘솔
 	 $('#boardViewForm').attr('action', '/ERunJRun/board/boardUpdateForm.do');
 	 $('#boardViewForm').submit();
 	 
