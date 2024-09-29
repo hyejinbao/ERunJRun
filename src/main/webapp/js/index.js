@@ -1,24 +1,24 @@
-  const navbarBurger = document.querySelector('.navbar_burger');
-  const navbarburgerback = document.querySelector('.navbar_burger_back');
-  const navbarMenu = document.querySelector('.navbar_menu');
-  const navbarOverlay = document.querySelector('.navbar_overlay');
+const navbarBurger = document.querySelector('.navbar_burger');
+const navbarburgerback = document.querySelector('.navbar_burger_back');
+const navbarMenu = document.querySelector('.navbar_menu');
+const navbarOverlay = document.querySelector('.navbar_overlay');
 
-  navbarBurger.addEventListener('click', () => {
-    navbarMenu.classList.toggle('active');
-    navbarOverlay.classList.toggle('active');
-  });
+navbarBurger.addEventListener('click', () => {
+  navbarMenu.classList.toggle('active');
+  navbarOverlay.classList.toggle('active');
+});
 
-  navbarburgerback.addEventListener('click', () => {
-    navbarMenu.classList.remove('active');
-    navbarOverlay.classList.remove('active');
-  });
+navbarburgerback.addEventListener('click', () => {
+  navbarMenu.classList.remove('active');
+  navbarOverlay.classList.remove('active');
+});
 
-  navbarOverlay.addEventListener('click', () => {
-    navbarMenu.classList.remove('active');
-    navbarOverlay.classList.remove('active');
-  });
-  
-  /*이메일선택*/
+navbarOverlay.addEventListener('click', () => {
+  navbarMenu.classList.remove('active');
+  navbarOverlay.classList.remove('active');
+});  
+
+/*이메일선택*/
   function emailChange() {
       var email2 = document.getElementById("email2");
       var selectedValue = email2.value;

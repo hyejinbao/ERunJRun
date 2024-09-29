@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 	 	<div class="navbar_overlay"></div>
 	    <h1>Running Crew</h1>
 		<c:if test="${sessionScope.memberDTO.id != null}">
@@ -48,10 +47,9 @@
 	        </svg>
 	    </div>
 		<div class="navbar_menu">
-		  <a href="#">홈으로</a>
+		  <a href="/ERunJRun/index.do">홈으로</a>
 		  <a href="#">공지</a>
-		 <a href="./board/boardWriteForm.do">게시판</a> <!--오혜진수정 -->
-		 		 
+		  <a href="/ERunJRun/board/boardMain.do?pg=1">게시판</a> <!--오혜진수정 -->
 		  <a href="#">오운완</a>
 		  <div class="navbar_burger_back">
 		    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -60,3 +58,4 @@
 		  </div>
 		</div>
 	 	<!-- //햄버거 버튼 및 오른쪽 메뉴 -->
+	 	

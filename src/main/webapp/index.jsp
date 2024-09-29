@@ -20,7 +20,7 @@
 	  	<jsp:include page="./main/header.jsp" />
 	  </div>
 	  <div class="container">
-		  <jsp:include page="./main/modal.jsp" />
+		 <jsp:include page="./main/modal.jsp" />
 	      <!-- 동영상과 모집 섹션을 나란히 배치, 동영상 크기 확대 -->
 	      <div class="row align-items-center mb-3">
 	          <div class="col-md-12">
@@ -90,6 +90,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/member.js"></script>
 <script type="text/javascript" src="./js/image.js"></script>
 </body>
 </html>

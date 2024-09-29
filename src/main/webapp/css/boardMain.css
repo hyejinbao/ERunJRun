@@ -18,6 +18,10 @@ td {
     background-color: #fff;
 }
 
+a {
+	text-decoration: none;
+}
+
 /* 링크 스타일 */
 .subjectA:link, .subjectA:visited {
     color: #000;
@@ -181,7 +185,7 @@ td {
 		}
 
 		/* 버튼 스타일 */
-	input[type="button"] {
+#boardWriteBtn {
     background-color: #5D5D5D;
     color: white;
     border: none;
@@ -195,10 +199,6 @@ td {
     width: auto; /* 너비를 자동으로 설정 */
 }
 
-input[type="button"]:hover {
+#boardWriteBtn:hover {
     background-color: #737373; /* 호버 시 색상 변경 */
 }
-
-		input[type="button"]:hover {
-			background-color: #737373;
-		}

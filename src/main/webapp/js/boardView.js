@@ -1,5 +1,5 @@
 	$(function(){
-    if($('#memId').val() == $('#id').text()){
+    if($('#memberDTO').val() == $('#id').text()){
 		$('#boardViewSpan').show();
 		
 	}
