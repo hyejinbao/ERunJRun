@@ -30,17 +30,17 @@
 	              </video>
 	          </div>
 	      </div>
-	      
-	      <div id="crewBtn">
-			  <input type="button" value="크루 모집" onclick="changeType(1)">
-		      <input type="button" value="오운완" onclick="changeType(2)">
-	      </div>
-	      <div id="crewWriteBtn">
-	      <c:if test="${sessionScope.memberDTO.id != null}">
-		      <input type="button" value="글 등록" data-bs-toggle="modal" data-bs-target="#imageWriteModal">
-	      </c:if>
-	      </div>
-	      
+
+		  <div id="crewBtn">
+		      <input type="button" value="크루 모집" data-type="1" onclick="changeType(this)">
+		      <input type="button" value="오운완" data-type="2" onclick="changeType(this)">
+		  </div>
+		  <div id="crewWriteBtn">
+		      <c:if test="${sessionScope.memberDTO.id != null}">
+		          <input type="button" value="글 등록" id="imageWriteBtn" data-bs-toggle="modal" data-bs-target="#imageWriteModal">
+		      </c:if>
+		  </div>
+
 	      <!-- 카드 섹션 -->
 	      <section class="content d-flex flex-wrap justify-content-center mb-5 card-section">
 			    <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -52,7 +52,7 @@
 			                </div>
 			            </div>
 			        </div>
-			        
+
 			        <div class="col">
 			            <div class="card mx-2">
 			                <img src="./image/speed.jpg" class="card-img-top" alt="Speed">
@@ -61,7 +61,7 @@
 			                </div>
 			            </div>
 			        </div>
-			        
+
 			        <div class="col">
 			            <div class="card mx-2">
 			                <img src="./image/my.jpg" class="card-img-top" alt="My">
@@ -70,7 +70,7 @@
 			                </div>
 			            </div>
 			        </div>
-			        
+
 			        <div class="col">
 			            <div class="card mx-2">
 			                <img src="./image/treadmill.jpg" class="card-img-top" alt="Treadmill">

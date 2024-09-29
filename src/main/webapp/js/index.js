@@ -55,6 +55,3 @@
         }, 0); // 잠시 후에 필드를 비움
     });
     
-    function changeType(type) {
-		document.getElementById('imageType').value = type;
-	}

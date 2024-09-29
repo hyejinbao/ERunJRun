@@ -9,7 +9,7 @@
 		                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		            </div>
 		            <div class="modal-body">
-		                <form id="imageWriteForm">
+		                <form id="imageWriteForm" enctype="multipart/form-data" accept-charset="UTF-8" >
 	                        <label for="image1" class="form-label">업로드할 이미지 선택</label>
 		      				<input type="hidden" name="imageType" id="imageType" value="1" readonly>
 		                    <div class="imageWriteMb-3">
