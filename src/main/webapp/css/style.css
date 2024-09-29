@@ -66,6 +66,11 @@ h1, h2, h3 {
     z-index: 1;
 }
 
+.btn-selected {
+	background-color: #444444;
+	color: #ffffff;
+}
+
 /* 입력 필드 스타일 */
 input, textarea {
     display: block;
@@ -215,11 +220,6 @@ header h1 {
 
 .card-title, .card-subtitle {
     font-weight: bold; /* 제목과 부제목에 대한 굵기 증가 */
-}
-
-.card img {
-    max-height: 100%; /* 이미지를 카드에 맞게 설정 */
-    object-fit: cover; /* 이미지 비율 유지 */
 }
 
 /* 로그인 및 회원가입 라벨 텍스트 스타일 */
