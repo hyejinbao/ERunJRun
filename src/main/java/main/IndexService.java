@@ -21,5 +21,4 @@ public class IndexService implements CommandProcess {
 		}
 		return "/index.jsp";
 	}
-
 }

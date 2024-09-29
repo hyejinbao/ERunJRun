@@ -38,27 +38,102 @@
 		    <div class="card-container">
 		        <div class="card">
 		            <h3>미승인 회원</h3>
-		            <p>유효한 이벤트: 0개<br>종료된 이벤트: 0개</p>
+		            <table>
+		            	<tr>
+		            		<td>회원아이디</td>
+		            		<td>회원이름</td>
+		            		<td>성별</td>
+		            		<td><input type="button" value="승인"></td>
+		            		<td><input type="button" value="거절"></td>
+		            	</tr>
+		            	<tr>
+		            		<td>회원아이디</td>
+		            		<td>회원이름</td>
+		            		<td>성별</td>
+		            		<td><input type="button" value="승인"></td>
+		            		<td><input type="button" value="거절"></td>
+		            	</tr>
+		            	<tr>
+		            		<td>회원아이디</td>
+		            		<td>회원이름</td>
+		            		<td>성별</td>
+		            		<td><input type="button" value="승인"></td>
+		            		<td><input type="button" value="거절"></td>
+		            	</tr>
+		            </table>
 		        </div>
 		        <div class="card">
-		            <h3>CPU Top 5</h3>
-		            <p>해당 정보가 없습니다.</p>
+		            <h3>공지사항 관리</h3>
+		            <table>
+		            	<tr>
+		            		<td>타인 욕설/비방은 삼가합시다.</td>
+		            	</tr>
+		            </table>
 		        </div>
 		        <div class="card">
-		            <h3>Security Monitoring - IDS</h3>
-		            <p>조회기간: 2024.09.20 ~ 2024.09.26</p>
+		            <h3>게시판 관리</h3>
+		            <table>
+		            	<tr>
+		            		<td>운동화 사려는데 어디꺼가 좋나요</td>
+		            	</tr>
+		            	<tr>
+		            		<td>같이 달리실분 계신가요</td>
+		            	</tr>
+		            	<tr>
+		            		<td>서울에서 달리기 좋은 곳 있나요</td>
+		            	</tr>
+		            </table>
 		        </div>
 		        <div class="card">
-		            <h3>서비스 이용 내역</h3>
-		            <p>파트너에게 문의해주세요</p>
+		            <h3>회원정보 관리</h3>
+		            <table>
+		            	<tr>
+		            		<td>회원아이디</td>
+		            		<td>회원이름</td>
+		            		<td>성별</td>
+		            		<td>생일</td>
+		            		<td>이메일</td>
+		            	</tr>
+		            	<tr>
+		            		<td>회원아이디</td>
+		            		<td>회원이름</td>
+		            		<td>성별</td>
+		            		<td>생일</td>
+		            		<td>이메일</td>
+		            	</tr>
+		            	<tr>
+		            		<td>회원아이디</td>
+		            		<td>회원이름</td>
+		            		<td>성별</td>
+		            		<td>생일</td>
+		            		<td>이메일</td>
+		            	</tr>
+		            </table>
 		        </div>
 		        <div class="card">
-		            <h3>네트워크 이용 내역</h3>
-		            <p>이용 내역: 0.176825 GB<br>이용 현황 그래프:</p>
+		            <h3>오운완 게시판</h3>
+		            <table>
+		            	<tr>
+		            		<td>오늘도 5km 달렸습니다</td>
+		            	</tr>
+		            	<tr>
+		            		<td>힘들어서 걷기만 했네요</td>
+		            	</tr>
+		            	<tr>
+		            		<td>날이 좋아 한컷</td>
+		            	</tr>
+		            </table>
 		        </div>
 		        <div class="card">
-		            <h3>결제 정보</h3>
-		            <p>파트너에게 문의해주세요</p>
+		            <h3>크루관리 게시판</h3>
+		            <table>
+		            	<tr>
+		            		<td>이런 저런 크루 모집</td>
+		            	</tr>
+		            	<tr>
+		            		<td>달리다지침 크루 모집</td>
+		            	</tr>
+		            </table>
 		        </div>
 		    </div>
 		</div>
