@@ -20,28 +20,40 @@ td {
 
 a {
 	text-decoration: none;
+text-align: left; /* 왼쪽 정렬 */
+    display: block; /* 블록 요소로 변경하여 전체 너비 사용 */
+}
+/*마진*/
+.board-item .info span {
+    margin-left: 18px; /* 각 요소 간에 15px 간격 */
+}
+/* 링크 스타일 */
+
+#subjectA {
+    text-align: left; /* 왼쪽 정렬 */
+    display: block; /* 블록 요소로 변경하여 전체 너비 사용 */
 }
 
-/* 링크 스타일 */
+
 .subjectA:link, .subjectA:visited {
-    color: #000;
+    color: #6c757d;
     text-decoration: none;
 }
 
 .subjectA:hover {
-    color: #20c997;  /* 부트스트랩 컬러 사용 */
+    color: #0056b3; /* 부트스트랩 컬러 사용 */
     text-decoration: underline;
 }
 
 .subjectA:active {
-    color: #000;
+    color:#6c757d;;
     text-decoration: none;
 }
 
 /* 페이징 스타일 */
 #currentPaging {
-    border: 1px solid blue;
-    color: red;
+    border: 1px solid; color: #0056b3;
+    color: rgb(0, 0, 160);
     font-size: 16px;
     padding: 6px 12px;
     margin: 3px;
