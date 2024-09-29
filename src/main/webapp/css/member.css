@@ -80,3 +80,10 @@
     padding: 10px; /* 버튼 내부 여백 */
 
 }
+.deleteModal-footer{
+    display: flex; /* 플렉스 박스를 사용하여 버튼을 한 줄에 배치 */
+    gap: 10px;
+}
+.deleteModalBtn, .cancelModalBtn {
+    flex: 1; /* 플렉스 박스를 사용하여 버튼을 한 줄에 배치 */
+}

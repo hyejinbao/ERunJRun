@@ -249,26 +249,34 @@ $(document).ready(function() {
     }
 });
 /*회원탈퇴*/
-$('#deleteBtn').click(function () {
+$('#confirmDeleteBtn').click(function () {
+    const password = $('#deletePwd').val(); // 비밀번호 입력값 가져오기
+
+    // 비밀번호 입력 체크
+    if (!password) {
+        $('#deleteCheckDiv').text('비밀번호를 입력하세요');
+        return;
+    }
+
     $.ajax({
         type: 'POST',
-        url: './user/delete.do',
+        url: './user/delete.do', // 요청할 URL
         data: {
-            id: $('#myPageId').val(),
+            id: $('#myPageId').val(), // 회원 ID 가져오기
+            pwd: password // 비밀번호 추가
         },
         success: function (response) {
             if (response.trim() == 'success') {
-                alert("회원탈퇴가 완료되었습니다.")
-                location.href = './index.do';
-            }else if(response.trim() == 'fail') {
-                alert("회원탈퇴에 실패했습니다. 다시 시도해 주세요.");
+                alert("회원탈퇴가 완료되었습니다.");
+                location.href = './index.do'; // 성공 시 리다이렉트
+            } else if (response.trim() == 'fail') {
+                $('#deleteCheckDiv').text("비밀번호가 올바르지 않습니다."); // 비밀번호 오류 메시지
             }
-
-        },error: function (xhr, status, error) {
+        },
+        error: function (xhr, status, error) {
             console.error('AJAX 요청 실패: ', error);
             console.error('상태: ', status);
             console.dir(xhr);
         }
-
     });
 });

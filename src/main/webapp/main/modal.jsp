@@ -221,13 +221,39 @@
 											<div id="myPageAgreeDiv" style="color: red;"></div>
 											<div class="myPageBtn">
 												<button type="button" id="updateBtn" class="updateBtn btn-primary">수정하기</button>
-												<button type="button" id="deleteBtn" class="deleteBtn btn-primary">회원탈퇴</button>
+												<button type="button" id="deleteBtn" class="deleteBtn btn-primary"
+														data-bs-toggle="modal" data-bs-target="#deleteModal">회원탈퇴</button>
 											</div>
 						                </form>
 						            </div>
 						        </div>
 						    </div>
 						</div>
+<!-- 비밀번호 입력 모달 -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">회원탈퇴</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form" id="deleteForm" name="deleteForm">
+                    <div class="mb-3">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="deletePwd" name="deletePwd" class="form-control" placeholder="비밀번호를 입력하세요" style="margin-top: 20px;">
+                    </div>
+                    <div align="center" id="deleteCheckDiv" style="color: red;"></div>
+                </form>
+            </div>
+            <div class="deleteModal-footer">
+                <button type="button" id="confirmDeleteBtn" class="deleteModalBtn btn-primary">회원탈퇴</button>
+                <button type="button" class="cancelModalBtn btn-primary" data-bs-toggle="modal" data-bs-target="#myPageModal">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     window.onload = function () {
         const gender = ${sessionScope.memberDTO.gender !=null ? sessionScope.memberDTO.gender : 0}; // Java로부터 성별 값 가져오기

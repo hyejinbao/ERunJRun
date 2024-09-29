@@ -72,9 +72,19 @@ public class MemberDAO {
     public boolean deleteMember(String id) {
         boolean isDeleted = false;
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        sqlSession.delete("memberSQL.memberDelete", id);
-        sqlSession.commit();
-        sqlSession.close();
+        try {
+            int rowsAffected = sqlSession.delete("memberSQL.memberDelete", id);
+            sqlSession.commit();
+            // rowsAffected가 1이면 삭제 성공
+            if (rowsAffected > 0) {
+                isDeleted = true;
+            }
+        } catch (Exception e) {
+            // 예외 처리 (로그 기록 등)
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
         return isDeleted;
     }
 }
