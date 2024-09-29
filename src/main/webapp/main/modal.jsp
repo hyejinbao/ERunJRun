@@ -9,12 +9,14 @@
 		                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		            </div>
 		            <div class="modal-body">
-		                <form action="../jsp/uploadImage.jsp" method="post" enctype="multipart/form-data" class="form">
-		                        <label for="image1" class="form-label">업로드할 이미지 선택</label>
+		                <form id="imageWriteForm">
+	                        <label for="image1" class="form-label">업로드할 이미지 선택</label>
+		      				<input type="hidden" name="imageType" id="imageType" value="1" readonly>
 		                    <div class="imageWriteMb-3">
 								<div class="image-upload-container">
-									<img id="showing"/>
-										<div class="camera">
+									<img id="showImg"/>
+										<div class="camera" id="camera">
+											<!-- 카메라 svg 코드(일러스트 이미지) -->
 											<svg width="50px" height="50px" viewBox="0 0 32 32" id="svg5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 												<defs id="defs2"/>
 													<g id="layer1" transform="translate(-108,-196)">
@@ -35,7 +37,7 @@
 		                        <label for="imageDescription" class="form-label">이미지 설명</label>
 		                        <textarea class="form-control" id="imageDescription" name="imageDescription" rows="3" placeholder="이미지에 대한 설명을 입력해주세요." required></textarea>
 		                    </div>
-		                    <button type="button" class="btn btn-primary">업로드</button>
+		                    <button type="button" id="imageWriteBtn" class="btn btn-primary">업로드</button>
 		                </form>
 		                <div class="mt-3 text-center">
 		                    <p>
