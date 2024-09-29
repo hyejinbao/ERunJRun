@@ -48,7 +48,7 @@ $('#writeBtn').click(function (){
         // 여기에 폼 제출 로직 추가 가능
         $.ajax({
            type: 'POST',
-           url: './user/write.do',
+           url: '/ERunJRun/user/write.do',
            data: $('form[name="signUpForm"]').serialize(),
            success: function (data){
                alert('회원가입이 완료되었습니다.')
@@ -67,11 +67,11 @@ $('#writeBtn').click(function (){
 $('#loginBtn').click(function (){
     $.ajax({
         type: 'POST',
-        url: './user/login.do',
+        url: '/ERunJRun/user/login.do',
         data: $('#loginForm').serialize(),
         success: function (response) {
             if (response.trim() === "success") {
-                location.href = './index.do'
+                location.href = '/ERunJRun/index.do'
             }else if(response.trim() === "fail") {
                 $('#loginCheckDiv').html("아이디 혹은 비밀번호가 일치하지 않습니다.")
             }
@@ -87,10 +87,10 @@ $('#loginBtn').click(function (){
 $('#logoutBtn').click(function (){
        $.ajax({
            type: 'POST',
-           url: './user/logout.do',
+           url: '/ERunJRun/user/logout.do',
            dataType: 'text',
            success: function (data){
-               location.href = './index.do'
+               location.href = '/ERunJRun/index.do'
            },error: function(xhr, status, error) {
                console.error('AJAX 요청 실패: ', error);
                console.error('상태: ', status);
@@ -112,7 +112,7 @@ $('#id').on('focusout', function() {
     } else {
         $.ajax({
             type: 'POST',
-            url: './user/checkId.do',
+            url: '/ERunJRun/user/checkId.do',
             data: { id: id },
             dataType: 'json',
             success: function(response) {
@@ -203,14 +203,14 @@ $('#updateBtn').click(function () {
     if (myPageValid) {
         $.ajax({
             type: 'POST', //내보낸다
-            url: './user/update.do',//해당 URL로
+            url: '/ERunJRun/user/update.do',//해당 URL로
             data: $('form[name="myPageForm"]').serialize(),//form안에 있는 모든 data를
             success: function (response) {
                 if (response.trim() == 'fail') {
                     alert('회원정보 수정 실패');
                 } else {
                     alert('회원정보 수정 완료');
-                    location.href = './index.do';
+                    location.href = '/ERunJRun/index.do';
                 }
             },
             error: function (xhr, status, error) {
@@ -260,7 +260,7 @@ $('#confirmDeleteBtn').click(function () {
 
     $.ajax({
         type: 'POST',
-        url: './user/delete.do', // 요청할 URL
+        url: '/ERunJRun/user/delete.do', // 요청할 URL
         data: {
             id: $('#myPageId').val(), // 회원 ID 가져오기
             pwd: password // 비밀번호 추가

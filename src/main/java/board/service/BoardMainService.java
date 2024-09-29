@@ -16,10 +16,10 @@ public class BoardMainService implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+	
 		int pg = 1;
-		if(request.getParameter("pg") != null) {
-			pg = Integer.parseInt(request.getParameter("pg"));
-		}
+		if(request.getParameter("pg") != null) pg = Integer.parseInt(request.getParameter("pg"));
+		 
 
 		//1페이지당 5개씩
 		//int endNum = pg * 5;
@@ -28,7 +28,8 @@ public class BoardMainService implements CommandProcess {
 		//mysql
 		int endNum = 15;// 글목록개수
 		int startNum = pg*endNum - endNum;
-
+		
+		
 		//DB
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		List<BoardDTO> list = boardDAO.boardList(startNum, endNum);
@@ -46,7 +47,6 @@ public class BoardMainService implements CommandProcess {
 		boardPaging.makePagingHTML();
 		
 		request.setAttribute("pg", pg);
-		
 		request.setAttribute("list", list); //화면에 준다. 
 		request.setAttribute("boardPaging", boardPaging); //보드페이징도 들고 간다. 
 		
