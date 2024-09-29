@@ -2,6 +2,15 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+
+# 빌드 디렉토리
+/bin/
+target/
+build/
+src/main/java/mybatis-config.xml
+
+# 이 줄을 명확히 예외 처리
 !src/main/java/**
 .properties
 
@@ -38,11 +47,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
-
-# 빌드 디렉토리
-/bin/
-target/
-/build/
 
 # intellyJ 파일
 *.idea/
