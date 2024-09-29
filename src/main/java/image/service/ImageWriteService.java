@@ -1,5 +1,8 @@
 package image.service;
 
+import java.io.File;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,7 +31,6 @@ public class ImageWriteService implements CommandProcess {
 		//new DefaultFileRenamePolicy() - 똑같은 이름이 들어올 시 파일명을 변경해서 올린다
 		//MultipartRequest multi = new MultipartRequest(request, realFolder, 5 * 1024 * 1024, "UTF-8");
 		MultipartRequest multi = new MultipartRequest(request, realFolder, 5 * 1024 * 1024, "UTF-8", new DefaultFileRenamePolicy());
-		
 		HttpSession session = request.getSession();
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("memberDTO");
 		//데이터
@@ -37,21 +39,28 @@ public class ImageWriteService implements CommandProcess {
 		String content = multi.getParameter("imageDescription");
 		String image = multi.getOriginalFileName("image1");
 		int imageType = Integer.parseInt(multi.getParameter("imageType"));
-		System.out.println("id " + id);
-		System.out.println("content " + content);
-		System.out.println("image " + image);
-		System.out.println("imageType " + imageType);
-		
+		String newFileName = UUID.randomUUID().toString() + getFileExtension(image);
+		File oldFile = new File(realFolder, image);
+		File newFile = new File(realFolder, newFileName);
+		if (oldFile.exists()) {
+			oldFile.renameTo(newFile); // 파일 이름 변경
+		}
 		ImageDTO imageDTO = new ImageDTO();
 		imageDTO.setId(id);
 		imageDTO.setContent(content);
-		imageDTO.setImage(image);
+		imageDTO.setImage(newFileName);
 		imageDTO.setImageType(imageType);
-		
+	
 		ImageDAO imageDAO = ImageDAO.getInstance();
 		imageDAO.writeImage(imageDTO);
-		
+	
 		return "none";
 	}
-
+	
+	private String getFileExtension(String fileName) {
+		if (fileName.lastIndexOf('.') > 0) {
+			return fileName.substring(fileName.lastIndexOf('.')); // 확장자 리턴
+		}
+		return ""; // 확장자가 없으면 빈 문자열 리턴
+	}
 }

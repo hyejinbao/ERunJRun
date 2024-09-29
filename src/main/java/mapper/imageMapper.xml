@@ -7,14 +7,12 @@
 	 	values (#{id}, #{content}, #{likeImage}, #{image}, #{imageType})
 	 </insert>
 	 
-	 <select id="imageList" resultType="image" parameterType="Map">
-		SELECT * 
-	    FROM run_image 
-	    ORDER BY seq DESC
-	    LIMIT #{startNum}, #{endNum}
+	 <select id="imageListByType" parameterType="Map" resultType="image">
+	 	SELECT * FROM run_image WHERE IMAGETYPE = #{imageType} ORDER BY seq DESC LIMIT #{startNum}, #{pageSize}
 	 </select>
 	 
-	 <select id="getTotalNum" resultType="int">
-	 	select count(*) from run_image
+	 <select id="getTotalImagesByType" parameterType="Map" resultType="int">
+	 	SELECT count(*) FROM run_image WHERE IMAGETYPE = #{imageType}
 	 </select>
+
 </mapper>
