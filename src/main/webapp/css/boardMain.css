@@ -1,0 +1,204 @@
+/* 테이블 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td {
+    background-color: #fff;
+}
+
+/* 링크 스타일 */
+.subjectA:link, .subjectA:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+.subjectA:hover {
+    color: #20c997;  /* 부트스트랩 컬러 사용 */
+    text-decoration: underline;
+}
+
+.subjectA:active {
+    color: #000;
+    text-decoration: none;
+}
+
+/* 페이징 스타일 */
+#currentPaging {
+    border: 1px solid blue;
+    color: red;
+    font-size: 16px;
+    padding: 6px 12px;
+    margin: 3px;
+}
+
+#paging {
+    color: black;
+    font-size: 16px;
+    padding: 6px 12px;
+    margin: 3px;
+}
+
+/* 페이지네이션 커스터마이징 */
+.pagination {
+    justify-content: center;
+}
+
+.page-link {
+    color: #007bff;
+}
+
+.page-link:hover {
+    color: #0056b3;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* 공통 스타일 */
+		body {
+			font-family: 'Noto Sans KR', sans-serif;
+			background-color: #f9f9f9;
+		}
+
+		#wrap {
+			width: 80%;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+		}
+
+		#header h1 {
+			display: flex;
+			align-items: center;
+			font-size: 1.8rem;
+			margin-bottom: 10px;
+				}
+
+		#section h1 {
+			font-size: 24px;
+			color: #050099;
+			margin-bottom: 20px;
+			text-align: left;
+			/* 왼쪽 정렬 */
+		
+		}
+		.boardListDiv {
+			margin-top: 20px;
+			width: 100%;
+			padding: 0;
+		}
+
+		.board-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 0;
+			border-bottom: 1px solid #eaeaea;
+		}
+
+		.board-item:last-child {
+			border-bottom: none;
+			/* 마지막 항목에 밑줄 제거 */
+		}
+
+	/* 	.board-item .subject {
+			flex: 1;
+			text-align: left;
+		}
+
+		.board-item .subject a {
+			color: #000;
+			text-decoration: none;
+			font-weight: bold;
+			margin-right: 5px;
+		}
+
+		.board-item .subject a:hover {
+			text-decoration: underline;
+			color: #0056b3;
+		}
+
+		.board-item .info {
+			display: flex;
+			align-items: center;
+			font-size: 12px;
+			color: #777;
+		}
+
+		.board-item .info span {
+			margin-left: 15px;
+		}
+
+		.board-item .info .nickname {
+			color: #999;
+			font-weight: bold;
+		}
+
+		.board-item .info .views {
+			color: #999;
+		}
+
+		.board-item .info .date {
+			color: #666;
+		} */
+
+		#paging {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		#paging .page-link {
+			padding: 8px 12px;
+			margin: 0 5px;
+			color: #0056b3;
+			text-decoration: none;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+		}
+
+		#paging .page-link:hover {
+			background-color: #f8f8f8;
+		}
+
+		#paging .current {
+			background-color: #007bff;
+			color: white;
+			border: 1px solid #007bff;
+		}
+
+		/* 버튼 스타일 */
+	input[type="button"] {
+    background-color: #5D5D5D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right; /* 오른쪽 정렬 */
+    margin-top: -60px; /* 위쪽 간격 */
+    margin-right: 10px; /* 오른쪽 간격 */
+    width: auto; /* 너비를 자동으로 설정 */
+}
+
+input[type="button"]:hover {
+    background-color: #737373; /* 호버 시 색상 변경 */
+}
+
+		input[type="button"]:hover {
+			background-color: #737373;
+		}
