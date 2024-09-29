@@ -13,7 +13,7 @@ public class BoardViewService implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// 데이터
-
+		
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 
