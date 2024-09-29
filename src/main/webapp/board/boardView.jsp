@@ -30,12 +30,12 @@
 
 					<table>
 						<tr>
-							<td colspan="3">제목TEST${boardDTO.subject }</td>
+							<td colspan="3">{boardDTO.subject }</td>
 						</tr>
 						<tr>
-							<td>글번호TEST: ${boardDTO.seq }</td>
-							<td>작성자TEST: <span id="id">${boardDTO.id }</span></td>
-							<td>조회수TEST: ${boardDTO.hit }</td>
+							<td>{boardDTO.seq }</td>
+							<td><span id="id">${boardDTO.id }</span></td>
+							<td>${boardDTO.hit }</td>
 						</tr>
 						<tr>
 						
@@ -55,7 +55,7 @@
 
 						<div class="btn-group">
 							<input type="button" value="목록"
-								onclick="location.href='/projectMVC/board/boardList.do?pg=${pg}'">
+								onclick="location.href='./board/boardList.do?pg=${pg}'">
 
 							<input type="button" value="수정" id="boardUpdateFormBtn">
 							<input type="button" value="삭제" id="boardDeleteBtn">
@@ -69,7 +69,7 @@
 		<!-- 스크립트 추가 -->
 		<script>
 			function boardPaging(pg) {
-				location.href = "/projectMVC/board/boardList.do?pg=" + pg;
+				location.href = "./board/boardList.do?pg=" + pg;
 			}
 		</script>
 
@@ -116,5 +116,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/boardView.js"></script>
 </body>
 </html>
