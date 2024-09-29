@@ -210,7 +210,7 @@ $('#updateBtn').click(function () {
                     alert('회원정보 수정 실패');
                 } else {
                     alert('회원정보 수정 완료');
-                    location.href = '/index.do';
+                    location.href = './index.do';
                 }
             },
             error: function (xhr, status, error) {

@@ -1,108 +1,146 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* 기본 레이아웃 설정 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.dashboard-container {
+/* 헤더 */
+.dashheader {
     display: flex;
-    height: 100vh;
+    justify-content: flex-end;  /* 오른쪽 정렬 */
+    align-items: center;        /* 수직 중앙 정렬 */
+    width: calc(100% - 220px);  /* 사이드바 크기를 뺀 너비 설정 */
+    height: 70px;
+    position: relative;
+    left: 220px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+    padding-right: 30px;        /* 오른쪽으로 여백 추가 */
 }
 
-/* Sidebar */
+/* 이름 텍스트에 스타일 추가 */
+.dashheader h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;        /* 텍스트 굵기 추가 */
+    color: #333;
+    background-color: #00aaff; /* 배경색 추가 */
+    color: white;             /* 텍스트 색상 변경 */
+    padding: 10px 20px;       /* 패딩으로 공간 확보 */
+    border-radius: 20px;      /* 둥근 테두리 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+    display: flex;
+    align-items: center;
+}
+
+#svgUser {
+	margin-right: 7px;
+}
+
+.dashheader h5::before {
+    font-size: 20px;
+    margin-right: 10px;       /* 아이콘과 이름 사이 간격 추가 */
+}
+.dashboard-top{
+	margin-top: 20px;
+}
+.dashboard-top h2 {
+	display: inline-block;
+}
+/* 좌측 사이드바 */
 .sidebar {
     width: 220px;
     background-color: #333;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
     color: #fff;
-    padding: 20px;
+    top: 0;
 }
 
-.sidebar .logo img {
-    width: 100%;
-    margin-bottom: 20px;
+#adminLogin {
+	cursor: pointer;
 }
 
-.sidebar .menu ul {
-    list-style: none;
+.sidebar h1 {
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 70px;
 }
 
-.sidebar .menu ul li {
-    margin: 20px 0;
-    font-size: 16px;
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.sidebar .menu ul li:hover {
-    color: #00b4d8;
+.sidebar ul li {
+    padding: 25px;
+    text-align: center;
+}
+
+.sidebar ul li:hover {
+    background-color: #575757;
     cursor: pointer;
 }
 
-/* Main Dashboard */
-.dashboard {
-    flex-grow: 1;
+/* 메인 컨텐츠 */
+.main-content {
+    margin-left: 400px;
+    margin-right: 130px;
     padding: 20px;
 }
 
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.dashboard-header h1 {
+.main-content h2 {
     font-size: 24px;
-    color: #333;
+    margin-bottom: 20px;
 }
 
-.refresh-button {
-    background-color: #00b4d8;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.refresh-button:hover {
-    background-color: #0077b6;
-}
-
-/* Cards Layout */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+/* 카드 스타일 */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* 카드 간 간격 추가 */
+	margin-top: 50px;
+	margin-right: 30px;
 }
 
 .card {
     background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%; /* 카드 크기 통일 */
+    min-height: 200px;
 }
 
-.card h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
+.card h3 {
+    margin-top: 0;
+    font-size: 18px;
 }
 
 .card p {
-    font-size: 16px;
-    color: #777;
+    font-size: 14px;
+    color: #666;
 }
 
-/* Placeholder for charts or graphs */
-.chart-placeholder {
-    width: 100%;
-    height: 100px;
-    background-color: #e0e0e0;
+/* 상단 버튼 */
+.refresh-button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.refresh-button:hover {
+    background-color: #0088cc;
 }
