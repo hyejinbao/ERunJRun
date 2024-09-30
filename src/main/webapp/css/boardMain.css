@@ -131,47 +131,26 @@ text-align: left; /* 왼쪽 정렬 */
 			/* 마지막 항목에 밑줄 제거 */
 		}
 
-	/* 	.board-item .subject {
-			flex: 1;
-			text-align: left;
+		.subjectA {
+/* 		    text-align: left; 왼쪽 정렬 */
+		    display: block; /* 블록 요소로 변경하여 전체 너비 사용 */
 		}
-
-		.board-item .subject a {
-			color: #000;
-			text-decoration: none;
-			font-weight: bold;
-			margin-right: 5px;
+		
+		.subjectA:link, .subjectA:visited {
+		    color: #6c757d;
+		    text-decoration: none;
 		}
-
-		.board-item .subject a:hover {
-			text-decoration: underline;
-			color: #0056b3;
+		
+		.subjectA:hover {
+		    color: #0056b3; /* 부트스트랩 컬러 사용 */
+		    text-decoration: underline;
 		}
-
-		.board-item .info {
-			display: flex;
-			align-items: center;
-			font-size: 12px;
-			color: #777;
+		
+		.subjectA:active {
+		    color:#6c757d;;
+		    text-decoration: none;
 		}
-
-		.board-item .info span {
-			margin-left: 15px;
-		}
-
-		.board-item .info .nickname {
-			color: #999;
-			font-weight: bold;
-		}
-
-		.board-item .info .views {
-			color: #999;
-		}
-
-		.board-item .info .date {
-			color: #666;
-		} */
-
+		
 		#paging {
 			text-align: center;
 			margin-top: 20px;

@@ -68,7 +68,7 @@
 
 <script type="text/javascript">
 function boardPaging(pg){
-	location.href = "./board/boardMain.do?pg=" + pg;
+	location.href = "./boardMain.do?pg=" + pg;
 }
 </script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
