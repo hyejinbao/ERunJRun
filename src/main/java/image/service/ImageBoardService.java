@@ -17,7 +17,7 @@ public class ImageBoardService implements CommandProcess {
         }
 
         // imageType 가져오기
-        int imageType = 1; // 기본값 설정
+        int imageType = 2; // 기본값 설정
         String imageTypeParam = request.getParameter("imageType");
         if (imageTypeParam != null && !imageTypeParam.isEmpty()) {
             imageType = Integer.parseInt(imageTypeParam);
