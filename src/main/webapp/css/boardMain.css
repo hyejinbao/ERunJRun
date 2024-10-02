@@ -18,22 +18,29 @@ td {
     background-color: #fff;
 }
 
-a {
-	text-decoration: none;
-text-align: left; /* 왼쪽 정렬 */
-    display: block; /* 블록 요소로 변경하여 전체 너비 사용 */
+/*a {
+    text-decoration: none;
+    display: inline-block;  블록 요소 대신 인라인 블록으로 수정 
+    width: auto;  너비를 자동으로 설정 
+    color: #333;
+    word-wrap: break-word;
+}*/
+
+
+.subjectA {
+    font-size: 1.2rem;
+    color: #333;
+    display: inline-block;
+    word-wrap: break-word; /* 긴 단어가 자동으로 줄바꿈되도록 설정 */
+    text-align: left; /* 제목을 왼쪽으로 정렬 */
 }
+
+
 /*마진*/
 .board-item .info span {
     margin-left: 18px; /* 각 요소 간에 15px 간격 */
 }
 /* 링크 스타일 */
-
-#subjectA {
-    text-align: left; /* 왼쪽 정렬 */
-    display: block; /* 블록 요소로 변경하여 전체 너비 사용 */
-}
-
 
 .subjectA:link, .subjectA:visited {
     color: #6c757d;
@@ -132,7 +139,6 @@ text-align: left; /* 왼쪽 정렬 */
 		}
 
 		.subjectA {
-/* 		    text-align: left; 왼쪽 정렬 */
 		    display: block; /* 블록 요소로 변경하여 전체 너비 사용 */
 		}
 		

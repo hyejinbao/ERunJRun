@@ -90,16 +90,19 @@ public class BoardDAO {
 
 	public void hitUpdate(int seq) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		sqlSession.update("boardSQL.hitUpdate", seq);
-		sqlSession.commit();
-		sqlSession.close();
+		 System.out.println("Executing hitUpdate for seq: " + seq);  // 로그 출력
+		  sqlSession.update("boardSQL.hitUpdate", seq);
+		   sqlSession.commit();
+		   System.out.println("Hit update committed");  // 로그 출력
+		    sqlSession.close();
 	}
-
 	public void boardDelete(int seq) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		sqlSession.delete("boardSQL.boardDelete", seq);
 		sqlSession.commit();
 		sqlSession.close();
 	}
+	
+	
 
 }

@@ -37,7 +37,7 @@
 							<div class="board-item">
 								<input type="hidden" id="pg" value="${ pg }">
 								<div class="seq">${ boardDTO.seq }</div>
-								<div class="subjectA"><a href="#">${boardDTO.subject }</a></div>
+								<div class="subjectA"><a href="#">${boardDTO.subject }</a></div> 
 								<div class="info">
 									<span class="nickname">${boardDTO.id }</span>
 									<span class="date">

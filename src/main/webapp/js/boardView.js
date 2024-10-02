@@ -28,7 +28,7 @@
          data: $('#boardViewForm').serialize(), // name=값&id=값&~~~~
          success: function() {
             alert('글 삭제 완료');
-            location.href = '/ERunJRun/board/boardView.do?pg=1';
+            location.href = '/ERunJRun/board/boardMain.do?pg=1';
          },
          error: function(e) {
             console.log(e);

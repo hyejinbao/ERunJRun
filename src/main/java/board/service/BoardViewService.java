@@ -21,8 +21,8 @@ public class BoardViewService implements CommandProcess {
 		
 		//조회수
 		boardDAO.hitUpdate(seq);
-		
 		BoardDTO boardDTO = boardDAO.getBoard(seq);
+		System.out.println("조회된 조회수: " + boardDTO.getHit());
 		
 		request.setAttribute("pg", pg);
 		request.setAttribute("boardDTO", boardDTO);

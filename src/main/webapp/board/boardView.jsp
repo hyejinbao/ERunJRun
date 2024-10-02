@@ -40,8 +40,10 @@
                   </tr>
                   <tr>
                      <td width="200">글번호 : ${boardDTO.seq }</td>
+                     
                      <td width="200">작성자 : <span id="id">${boardDTO.id }</span></td>
-                     <td width="200">조회수 : ${boardDTO.hit }</td>
+                     <td width="200">조회수 : ${boardDTO.hit}</td>
+                     
 
                   </tr>
                   <tr>

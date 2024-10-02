@@ -17,7 +17,7 @@ public class BoardDTO {
     private String subject; 
     private String content;   
     private String reply;             
-    private int hit;        
+    private int hit;       
     private String image1;
     private Date logtime;   
 
