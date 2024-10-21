@@ -1,0 +1,207 @@
+body {
+			font-family: 'Noto Sans KR', sans-serif;
+			background-color: #f9f9f9;
+		}
+
+		#wrap {
+			width: 80%;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+	}
+
+		.btn-custom {
+			background-color: #333;
+			color: white;
+			border: none;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			text-decoration: none;
+			text-align: center;
+			display: inline-block;
+			cursor: pointer;
+			margin-bottom: 20px;
+			transition: transform 0.3s, box-shadow 0.3s;
+			margin-bottom: 50px;
+			/* 버튼의 하단 여백 */
+		}
+
+		.btn-custom:hover {
+			background-color: #555;
+			/* 호버 시 색상 변경 */
+			transform: scale(1.1);
+			/* 호버 시 버튼이 10% 커지도록 설정 */
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+			/* 호버 시 그림자 효과 추가로 튀어나와 보이게 함 */
+		}
+
+		/* hr 태그에 마진 추가 */
+		hr {
+			margin-top: 50px;
+			margin-bottom: 100px;
+			border: none;
+			border-top: 2px solid #ddd;
+		}
+
+		/*오혜진추가
+		#wrap {
+			width: 90%;
+			max-width: 1200px;
+			margin: 0 auto;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			border-radius: 8px;
+			margin-top: 20px;
+		}*/
+
+		#header h1 {
+			display: flex;
+			align-items: center;
+			font-size: 1.8rem;
+			margin-bottom: 10px;
+				}
+
+		#section h1 {
+			font-size: 24px;
+			color: #050099;
+			margin-bottom: 20px;
+			text-align: left;
+			/* 왼쪽 정렬 */
+		
+		}
+		#header img {
+			margin-right: 10px;
+		}
+
+		hr {
+			border-color: #483D8B;
+			border-width: 2px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+			font-size: 1rem;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid #ddd;
+		}
+		
+		th,
+		td {
+			padding: 10px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+
+		td[colspan="3"] {
+			font-size: 1.3rem;
+			font-weight: bold;
+		}
+
+		td[valign="top"] {
+			text-align: left;
+			padding: 20px;
+			line-height: 1.6;
+			white-space: pre-line;
+		}
+
+		/* 버튼 스타일 */
+	input[type="button"] {
+    background-color: #5D5D5D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right; /* 오른쪽 정렬 */
+    margin-top: 0px; /* 글쓰기 폼에서 수정_오혜진 */
+    margin-right: 10px; 
+    width: auto; 
+}
+
+input[type="button"]:hover {
+    background-color: #737373; /* 호버 시 색상 변경 */
+}
+
+		.btn-group {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-top: 10px;
+		}
+
+		.btn-group button {
+			flex: 1;
+			/* 같은 사이즈로 배치 */
+			padding: 10px;
+			/* 버튼 안쪽 여백 */
+			text-align: center;
+			/* 텍스트 중앙 정렬 */
+		}
+         
+		/* 긴 내용이 있는 셀_재헌님추가_240926 */
+pre {
+    white-space: pre-wrap;   /* 줄바꿈을 유지하면서 자동 줄바꿈 */
+    word-wrap: break-word;   /* 긴 단어를 자동으로 줄바꿈 */
+    word-break: break-all;   /* 단어 중간에서도 줄바꿈 가능 */
+}
+.content {
+    max-height: 500px; /* 최대 높이 설정 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+    white-space: pre-wrap; /* 공백과 줄바꿈을 유지하면서 텍스트를 줄 바꿈 */
+    word-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+    word-break: break-all; /* 긴 단어나 연속된 영어 단어가 있으면 강제로 줄바꿈 */
+}
+		/* 반응형 조정 */
+		@media (max-width: 768px) {
+
+			table,
+			th,
+			td {
+				font-size: 0.9rem;
+			}
+
+			#header h1 {
+				font-size: 1.5rem;
+			}
+		}
+         
+		/* 긴 내용이 있는 셀_재헌님추가_240926 */
+pre {
+    white-space: pre-wrap;   /* 줄바꿈을 유지하면서 자동 줄바꿈 */
+    word-wrap: break-word;   /* 긴 단어를 자동으로 줄바꿈 */
+    word-break: break-all;   /* 단어 중간에서도 줄바꿈 가능 */
+}
+.content {
+    max-height: 500px; /* 최대 높이 설정 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+    white-space: pre-wrap; /* 공백과 줄바꿈을 유지하면서 텍스트를 줄 바꿈 */
+    word-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+    word-break: break-all; /* 긴 단어나 연속된 영어 단어가 있으면 강제로 줄바꿈 */
+}
+		/* 반응형 조정 */
+		@media (max-width: 768px) {
+
+			table,
+			th,
+			td {
+				font-size: 0.9rem;
+			}
+
+			#header h1 {
+				font-size: 1.5rem;
+			}
+		}

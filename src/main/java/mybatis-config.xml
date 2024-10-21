@@ -3,6 +3,9 @@
 <configuration>
 	<properties resource="db.properties"/>
 	<typeAliases>
+		<typeAlias type="member.bean.MemberDTO" alias="member"/>
+		<typeAlias type="board.bean.BoardDTO" alias="board" />  <!-- 오혜진 수정 -->
+		<typeAlias type="image.bean.ImageDTO" alias="image" /> 
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -16,5 +19,8 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="mapper/memberMapper.xml"/>
+		<mapper resource="mapper/boardMapper.xml" />
+		<mapper resource="mapper/imageMapper.xml" />
 	</mappers>
 </configuration>
