@@ -18,6 +18,10 @@
 - **SQL 툴**: DBeaver
 - **버전 관리**: GitHub
 
+## 💻 기술스택
+
+![KakaoTalk_20241031_022847409](https://github.com/user-attachments/assets/120725ff-0591-493d-a2eb-f90273101f3f)
+
 ## ✨ 프로젝트 목적
 ### 목표: 사용자가 이미지 등록과 조회를 편하게 하게끔 카드 형식으로 제공
 ### 주제 : 꾸준한 운동 기록 관리와 함께 운동 할 수 있는 크루 모집
@@ -31,7 +35,7 @@
 | 메인화면  |                      헤더<br/>푸터<br/>본문	            |             크루모집/오늘운동기록 카드 섹션, 버튼으로 서비스 분리                                     |
 
 #### 팀원 소개 및 역할
-![팀원 소개 및 역할](https://github.com/user-attachments/assets/a845a7ef-81db-49db-991d-27b9b95e721f)
+![KakaoTalk_20241031_023129926](https://github.com/user-attachments/assets/924f79b3-d966-4b64-a7c8-5d7e9c14f4f2)
 
 #### ERD-DIAGRAM
 ![ERD](https://github.com/user-attachments/assets/82d46ddb-8496-49e6-99a1-c5ae2bae0fc4)
